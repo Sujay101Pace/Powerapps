@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_add-20sales-20line-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+    "Name": "AddSalesline",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

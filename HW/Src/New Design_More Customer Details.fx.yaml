@@ -1,0 +1,201 @@
+"'New Design_More Customer Details' As screen":
+
+    Label10_5 As label:
+        Fill: =RGBA(26, 26, 26, 1)
+        Height: =75
+        Text: ="Text"
+        Width: =1366
+        ZIndex: =1
+
+    Image1_5 As image:
+        Height: =75
+        Image: =image
+        Width: =173
+        ZIndex: =2
+
+    Label12_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =58
+        Size: =20
+        Text: ="More details about the customer"
+        Width: =467
+        X: =449
+        Y: =8
+        ZIndex: =3
+
+    Rectangle3_2 As rectangle:
+        BorderThickness: =1
+        Fill: =RGBA(227, 234, 243, 1)
+        X: =21
+        Y: =100
+        ZIndex: =8
+
+    Rectangle3_3 As rectangle:
+        BorderThickness: =1
+        Fill: =RGBA(227, 234, 243, 1)
+        X: =188
+        Y: =100
+        ZIndex: =9
+
+    Label22_2 As label:
+        Align: =Align.Center
+        Text: ="Sales Order on Hold"
+        X: =21
+        Y: =107
+        ZIndex: =10
+
+    Label22_3 As label:
+        Align: =Align.Center
+        Text: ="Accomplished Sales Order"
+        X: =188
+        Y: =107
+        ZIndex: =11
+
+    CompanyTxt_1 As label:
+        Height: =49
+        Size: =20
+        Text: |-
+            ="Entity:"
+        Width: =276
+        X: =21
+        Y: =276
+        ZIndex: =13
+
+    CustnameTxt_1 As label:
+        Height: =67
+        Size: =20
+        Text: |-
+            ="Customer Name:"
+        Width: =246
+        X: =22
+        Y: =333
+        ZIndex: =14
+
+    EmailTxt_1 As label:
+        Height: =45
+        Size: =20
+        Text: |-
+            ="Email:"
+        Width: =196
+        X: =22
+        Y: =484
+        ZIndex: =15
+
+    PhoneTxt_1 As label:
+        Height: =34
+        Size: =20
+        Text: |-
+            ="Phone:"
+        Width: =168
+        X: =22
+        Y: =557
+        ZIndex: =16
+
+    Label14_1 As label:
+        Height: =44
+        Size: =20
+        Text: |-
+            ="Customer ID:"
+        Width: =197
+        X: =21
+        Y: =417
+        ZIndex: =17
+
+    Label15_1 As label:
+        Height: =37
+        Size: =20
+        Text: |-
+            ="Credit Balance:"
+        Width: =211
+        X: =21
+        Y: =623
+        ZIndex: =18
+
+    "Gallery3 As gallery.'BrowseLayout_Flexible_SocialFeed_ver5.0'":
+        DelayItemLoading: =true
+        Height: =487
+        Items: =cust_gallery.Selected
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =4
+        TemplateSize: =427
+        Width: =937
+        X: =297
+        Y: =258
+        ZIndex: =19
+
+        Label28 As label:
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Company
+            X: =16
+            Y: =24
+            ZIndex: =1
+
+        Label28_1 As label:
+            Height: =29
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.CustomerName
+            Width: =477
+            X: =16
+            Y: =88
+            ZIndex: =2
+
+        Label28_2 As label:
+            Height: =35
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.CustomerId
+            Width: =252
+            X: =16
+            Y: =160
+            ZIndex: =3
+
+        Label28_3 As label:
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.EMail
+            Width: =906
+            X: =16
+            Y: =228
+            ZIndex: =4
+
+        Label28_4 As label:
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.Phone
+            Width: =606
+            X: =16
+            Y: =291
+            ZIndex: =5
+
+        Label28_5 As label:
+            OnSelect: =Select(Parent)
+            Text: =
+            Width: =606
+            X: =16
+            Y: =362
+            ZIndex: =6
+
+    Label15_2 As label:
+        Height: =37
+        Size: =20
+        Text: |-
+            ="Loyalty Points:"
+        Width: =211
+        X: =22
+        Y: =683
+        ZIndex: =20
+
+    Icon5_1 As icon.Cancel:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =52
+        Icon: =Icon.Cancel
+        OnSelect: =Navigate('New Design_Dashboard')
+        X: =1277
+        Y: =11
+        ZIndex: =21
+

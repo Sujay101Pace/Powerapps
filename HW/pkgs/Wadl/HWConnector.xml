@@ -1,0 +1,61 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/hwconnector-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="HWConnector" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="HWConnector"></doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/hwconnector-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="searchCustomer_param_body_def__contract_def_Company_def" />
+      <string name="searchCustomer_param_body_def__contract_def_SearchText_def" />
+      <object name="searchCustomer_param_body_def__contract_def">
+        <property name="Company" type="string" />
+        <property name="SearchText" type="string" />
+      </object>
+      <object name="searchCustomer_param_body_def">
+        <property name="_contract" typeRef="searchCustomer_param_body_def__contract_def" />
+      </object>
+      <string name="searchCustomer_responses_default_def__ux24_id_def" />
+      <string name="searchCustomer_responses_default_def_CustomersList_def_items_def__ux24_id_def" />
+      <string name="searchCustomer_responses_default_def_CustomersList_def_items_def_CustomerId_def" />
+      <string name="searchCustomer_responses_default_def_CustomersList_def_items_def_CustomerName_def" />
+      <string name="searchCustomer_responses_default_def_CustomersList_def_items_def_Company_def" />
+      <string name="searchCustomer_responses_default_def_CustomersList_def_items_def_SearchName_def" />
+      <string name="searchCustomer_responses_default_def_CustomersList_def_items_def_EMail_def" />
+      <string name="searchCustomer_responses_default_def_CustomersList_def_items_def_Phone_def" />
+      <object name="searchCustomer_responses_default_def_CustomersList_def_items_def">
+        <property name="$id" type="string" />
+        <property name="CustomerId" type="string" />
+        <property name="CustomerName" type="string" />
+        <property name="Company" type="string" />
+        <property name="SearchName" type="string" />
+        <property name="EMail" type="string" />
+        <property name="Phone" type="string" />
+      </object>
+      <array typeRef="searchCustomer_responses_default_def_CustomersList_def_items_def" name="searchCustomer_responses_default_def_CustomersList_def" />
+      <object name="searchCustomer_responses_default_def">
+        <property name="$id" type="string" />
+        <property name="CustomersList" typeRef="searchCustomer_responses_default_def_CustomersList_def" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/hwconnector-5f9676d0ca9689d770-5f4fe3078c820f4eba">
+    <resource path="/{connectionId}/api/services/HWStore/HWCustomerDetailsService/search">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="searchCustomer" actionName="searchCustomer" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_contract" path="/_contract" type="service:searchCustomer_param_body_def__contract_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:searchCustomer_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_hwconnector-5f9676d0ca9689d770-5f4fe3078c820f4eba" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

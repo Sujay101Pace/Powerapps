@@ -1,0 +1,313 @@
+Screen1 As screen:
+
+    Label10 As label:
+        Fill: =RGBA(26, 26, 26, 1)
+        Height: =75
+        Text: ="Text"
+        Width: =1366
+        ZIndex: =1
+
+    TextInput3 As text:
+        Default: =""
+        HintText: ="Customer Search"
+        OnChange: =
+        X: =330
+        Y: =157
+        ZIndex: =2
+
+    "Customergallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(204, 208, 225, 1)
+        DelayItemLoading: =true
+        Fill: =RGBA(251, 188, 159, 1)
+        Height: =110
+        Items: =Search(CustomersV3,TextInput3.Text,"CustomerAccount")
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =96
+        Visible: |-
+            =//If(IsBlank(TextInput3.Text),false,true)
+            true
+        Width: =349
+        X: =679
+        Y: =117
+        ZIndex: =3
+
+        Title1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =31
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.'Customer account'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =174
+            X: =78
+            Y: =34
+            ZIndex: =2
+
+        Icon8 As icon.Add:
+            Height: =48
+            Icon: =Icon.Add
+            OnSelect: |+
+                =Collect(
+                    CollectGallery2Items,
+                    {
+                        Customeraccount:Title1.Text
+                    });
+                    Set(
+                    JsonData,
+                    JSON(
+                        CollectGallery2Items
+                        )
+                );
+                ClearCollect(CollectGallery2Items,{});
+                Reset(TextInput3);
+                Reset(Customergallery);
+                
+                //Set(JsonData,Blank())
+                 
+                
+                
+            Width: =52
+            X: =234
+            Y: =26
+            ZIndex: =3
+
+    Label1 As label:
+        Height: =128
+        Text: =JsonData
+        Width: =311
+        X: =1055
+        Y: =92
+        ZIndex: =4
+
+    serialnosearch As text:
+        Default: =""
+        HintText: ="Serial No. Search"
+        Visible: |-
+            =//If(IsBlank(TextInput3.Text),false,true)
+            true
+        X: =333
+        Y: =279
+        ZIndex: =5
+
+    "Serialnumbergallery As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Fill: =RGBA(250, 155, 112, 1)
+        Height: =103
+        Items: =Search(ItemSerialNumbers,serialnosearch.Text,"ItemNumber")
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =95
+        Width: =349
+        X: =676
+        Y: =238
+        ZIndex: =6
+
+        Label4 As label:
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.'Item number'
+            X: =80
+            Y: =30
+            ZIndex: =5
+
+        Icon2 As icon.Check:
+            Height: =52
+            Icon: =Icon.Add
+            OnSelect: |
+                =Collect(
+                    CollectItems,
+                    {
+                        Customeraccount:Label4.Text
+                    });
+                    Set(
+                    getJsonData,
+                    JSON(
+                        CollectItems
+                        )
+                );
+                ClearCollect(CollectItems,{});
+                Reset(serialnosearch);
+                
+                Collect(SerialCollect,Serialnumbergallery.Selected);
+            Width: =62
+            X: =230
+            Y: =18
+            ZIndex: =6
+
+    Label5 As label:
+        Height: =103
+        Text: =getJsonData
+        Width: =285
+        X: =1068
+        Y: =229
+        ZIndex: =7
+
+    GettingItemDetails As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =223
+        Items: =ForAll(Distinct(SerialCollect,ThisRecord),Value)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =64
+        Width: =1362
+        X: =3
+        Y: =382
+        ZIndex: =8
+
+        Label3 As label:
+            Align: =Align.Center
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.'Item number'
+            X: =56
+            Y: =2
+            ZIndex: =1
+
+        Label3_1 As label:
+            Align: =Align.Center
+            Height: =44
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.'Serial number'
+            Width: =155
+            X: =352
+            ZIndex: =2
+
+        Label3_2 As label:
+            Align: =Align.Center
+            Height: =44
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.'Manufacturing date'
+            Width: =176
+            X: =694
+            ZIndex: =3
+
+        Label3_3 As label:
+            Align: =Align.Center
+            Height: =42
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Company
+            Width: =171
+            X: =985
+            Y: =2
+            ZIndex: =4
+
+        Icon3 As icon.Cancel:
+            Height: =36
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =Remove(SerialCollect,ThisItem)
+                
+                //Remove(SerialCollect,ThisItem)
+            Width: =52
+            X: =1216
+            ZIndex: =6
+
+    Label6 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Text: ="Item no"
+        X: =63
+        Y: =341
+        ZIndex: =9
+
+    Label6_1 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Text: ="Serial no"
+        X: =366
+        Y: =341
+        ZIndex: =10
+
+    Label6_2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Text: ="Manufacturing date"
+        Width: =182
+        X: =709
+        Y: =342
+        ZIndex: =11
+
+    Label6_3 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Text: ="Company"
+        X: =999
+        Y: =342
+        ZIndex: =12
+
+    Label7 As label:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =140
+        Text: =Text(JsonData2)
+        Width: =378
+        X: =63
+        Y: =618
+        ZIndex: =13
+
+    Button1 As button:
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =55
+        OnSelect: |-
+            =
+            ClearCollect(SerialCollect2,{});
+            
+            ForAll(GettingItemDetails.AllItems, Collect(SerialCollect2,{ItemN0:Label3.Text,SerialNo:Label3_1.Text,ManufactureDate:Label3_2.Text,Company:Label3_3.Text}));
+            
+            Set(JsonData2, JSON(SerialCollect2));
+        Text: ="Create Sales Order"
+        Width: =183
+        X: =591
+        Y: =681
+        ZIndex: =14
+
+    Label8 As label:
+        Size: =14
+        Text: ="Search by customer id"
+        Width: =212
+        X: =366
+        Y: =117
+        ZIndex: =15
+
+    Label8_1 As label:
+        Size: =14
+        Text: ="Search by serial no"
+        Width: =212
+        X: =379
+        Y: =238
+        ZIndex: =16
+
+    Image1 As image:
+        Height: =136
+        Image: =image
+        Width: =308
+        ZIndex: =17
+
+    Label2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =14
+        Text: ="Sales Order No"
+        X: =960
+        Y: =18
+        ZIndex: =18
+
+    Label9 As label:
+        Fill: =RGBA(215, 223, 240, 1)
+        Text: =""
+        Width: =216
+        X: =1110
+        Y: =18
+        ZIndex: =19
+

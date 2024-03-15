@@ -1,0 +1,38 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/confirm-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="ConfirmSO" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Confirm SO">This API is for confirming the sales order against the customer</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/confirm-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="confirmso_param_body_def__confirm_def_SalesId_def" />
+      <object name="confirmso_param_body_def__confirm_def">
+        <property name="SalesId" type="string" />
+      </object>
+      <object name="confirmso_param_body_def">
+        <property name="_confirm" typeRef="confirmso_param_body_def__confirm_def" />
+      </object>
+      <untypedObject name="confirmso_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/confirm-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba">
+    <resource path="/{connectionId}/api/services/HWStore/HWSalesOrderConfirmService/soConfirm">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="confirmso" actionName="confirmso" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_confirm" path="/_confirm" type="service:confirmso_param_body_def__confirm_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:confirmso_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_confirm-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

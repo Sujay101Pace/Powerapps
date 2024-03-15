@@ -1,0 +1,23 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_dynamicsax",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-10-11T16:20:12.2780000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "dataAreaId": "Company",
+      "Description": "Text",
+      "ItemNumber": "Item number",
+      "ManufacturingDate": "Manufacturing date",
+      "SerialNumber": "Serial number"
+    },
+    "DatasetName": "sainacloud221c3d746a7b1021devaos.axcloud.dynamics.com",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "ItemSerialNumbers",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

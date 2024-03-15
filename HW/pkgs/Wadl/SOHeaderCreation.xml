@@ -1,0 +1,49 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/so-20header-20creation-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="SOHeaderCreation" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="SO Header Creation">Create SO Header from Canvas app</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/so-20header-20creation-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="Createsoheader_param_body_def__create_def_CustAccount_def" />
+      <object name="Createsoheader_param_body_def__create_def">
+        <property name="CustAccount" type="string" />
+      </object>
+      <object name="Createsoheader_param_body_def">
+        <property name="_create" typeRef="Createsoheader_param_body_def__create_def" />
+      </object>
+      <string name="Createsoheader_responses_default_def__ux24_id_def" />
+      <string name="Createsoheader_responses_default_def_SalesId_def" />
+      <string name="Createsoheader_responses_default_def_Address_def" />
+      <string name="Createsoheader_responses_default_def_Phone_def" />
+      <string name="Createsoheader_responses_default_def_Email_def" />
+      <object name="Createsoheader_responses_default_def">
+        <property name="$id" type="string" />
+        <property name="SalesId" type="string" />
+        <property name="Address" type="string" />
+        <property name="Phone" type="string" />
+        <property name="Email" type="string" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/so-20header-20creation-5f9676d0ca9689d770-5f4fe3078c820f4eba">
+    <resource path="/{connectionId}/api/services/HWStore/HWCreateSalesOrderService/createSOHeader">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Createsoheader" actionName="Createsoheader" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_create" path="/_create" type="service:Createsoheader_param_body_def__create_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Createsoheader_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_so-20header-20creation-5f9676d0ca9689d770-5f4fe3078c820f4eba" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

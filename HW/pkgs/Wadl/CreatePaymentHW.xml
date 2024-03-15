@@ -1,0 +1,46 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/create-20payment-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="CreatePaymentHW" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Create Payment HW">making API for creating payment for HW</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/create-20payment-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="CreatePayment_param_body_def__paymentScreen_def_SalesId_def" />
+      <string name="CreatePayment_param_body_def__paymentScreen_def_TransDate_def" />
+      <string name="CreatePayment_param_body_def__paymentScreen_def_Amount_def" />
+      <string name="CreatePayment_param_body_def__paymentScreen_def_CurrencyCodeBase_def" />
+      <string name="CreatePayment_param_body_def__paymentScreen_def_PaymentMethod_def" />
+      <object name="CreatePayment_param_body_def__paymentScreen_def">
+        <property name="SalesId" type="string" />
+        <property name="TransDate" type="string" />
+        <property name="Amount" type="string" />
+        <property name="CurrencyCodeBase" type="string" />
+        <property name="PaymentMethod" type="string" />
+      </object>
+      <object name="CreatePayment_param_body_def">
+        <property name="_paymentScreen" typeRef="CreatePayment_param_body_def__paymentScreen_def" />
+      </object>
+      <untypedObject name="CreatePayment_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/create-20payment-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba">
+    <resource path="/{connectionId}/api/services/HWStore/HWPaymentHistoryService/insert">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="CreatePayment" actionName="CreatePayment" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_paymentScreen" path="/_paymentScreen" type="service:CreatePayment_param_body_def__paymentScreen_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:CreatePayment_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_create-20payment-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

@@ -1,0 +1,426 @@
+"'New Design_Sales order Transactions' As screen":
+
+    Label10_6 As label:
+        Fill: =RGBA(26, 26, 26, 1)
+        Height: =75
+        Text: ="Text"
+        Width: =1366
+        ZIndex: =1
+
+    Image1_6 As image:
+        Height: =75
+        Image: =image
+        Width: =173
+        ZIndex: =2
+
+    Label12_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =58
+        Size: =20
+        Text: ="Sales Order Transactions"
+        Width: =467
+        X: =491
+        Y: =11
+        ZIndex: =3
+
+    Icon5_2 As icon.Cancel:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =52
+        Icon: =Icon.Cancel
+        OnSelect: =Navigate('New Design_Dashboard')
+        X: =1277
+        Y: =11
+        ZIndex: =4
+
+    Label30 As label:
+        Text: |-
+            ="Customer name:"
+        X: =24
+        Y: =92
+        ZIndex: =5
+
+    Label32 As label:
+        Fill: =RGBA(237, 237, 237, 1)
+        Text: =cust_gallery.Selected.CustomerName
+        Width: =226
+        X: =186
+        Y: =92
+        ZIndex: =6
+
+    Label30_1 As label:
+        Text: |-
+            ="Sales order no:"
+        X: =24
+        Y: =143
+        ZIndex: =7
+
+    Label32_1 As label:
+        Fill: =RGBA(237, 237, 237, 1)
+        Text: =createsoheader.SalesId
+        Width: =226
+        X: =186
+        Y: =143
+        ZIndex: =8
+
+    cust_id As label:
+        Fill: =RGBA(237, 237, 237, 1)
+        Text: =cust_gallery.Selected.CustomerId
+        Visible: =false
+        Width: =226
+        X: =436
+        Y: =92
+        ZIndex: =9
+
+    Button7 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(152, 208, 70, 1)
+        OnSelect: |-
+            =SOHold.holdsalesorder({_onHold:{  
+                  salesId: Label32_1.Text
+                }
+            });
+            Notify("This order is on hold");
+        Text: ="Hold Order"
+        X: =130
+        Y: =725
+        ZIndex: =10
+
+    Button7_1 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(152, 208, 70, 1)
+        OnSelect: |-
+            =CancelSO.cancelso
+                 (
+                {
+                    _cancel: 
+                    {
+                        SalesId: Label32_1.Text
+                    }
+                });
+            Notify("This Order has been cancelled")
+        Text: ="Cancel Order"
+        X: =395
+        Y: =725
+        ZIndex: =11
+
+    Transaction_rect As rectangle:
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =500
+        Width: =934
+        X: =24
+        Y: =216
+        ZIndex: =12
+
+    serialno_search As text:
+        Clear: =true
+        Default: =""
+        HintText: ="Search by serial no"
+        X: =37
+        Y: =231
+        ZIndex: =13
+
+    Icon11 As icon.ShoppingCart:
+        Icon: =Icon.ShoppingCart
+        X: =894
+        Y: =219
+        ZIndex: =14
+
+    "transaction As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =382
+        Items: =serialcol
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        Width: =902
+        X: =37
+        Y: =313
+        ZIndex: =15
+
+        Image4 As image:
+            Height: =72
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =72
+            X: =17
+            Y: =16
+            ZIndex: =1
+
+        Title6 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.ItemId
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =103
+            Y: =16
+            ZIndex: =2
+
+        Subtitle4 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.ItemName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =403
+            X: =Title6.X
+            Y: =Title6.Y + Title6.Height
+            ZIndex: =3
+
+        Separator4 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle6 As rectangle:
+            Height: =Parent.TemplateHeight - Separator4.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Label35 As label:
+            Height: =27
+            OnSelect: =Select(Parent)
+            Text: |-
+                =Text(ThisItem.Price,"[$-en-us]$#,###")
+            X: =103
+            Y: =65
+            ZIndex: =7
+
+        Label36 As label:
+            Align: =Align.Center
+            Height: =30
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Quantity
+            Width: =70
+            X: =667
+            Y: =33
+            ZIndex: =8
+
+        Icon13 As icon.Cancel:
+            Height: =40
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =Remove(
+                    serialcol,
+                    ThisItem
+                );
+                DeleteSalesOrderLine.deleteline({_delete: {SalesLineDelRecId: record_id.Text}})
+            Width: =40
+            X: =832
+            Y: =31
+            ZIndex: =9
+
+        record_id As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Sales line RecId'
+            Visible: =false
+            X: =411
+            ZIndex: =10
+
+    Icon12 As icon.Add:
+        Height: =40
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Collect(serialcol,
+             AddSalesline.addline(
+                    {
+                        _CreateSalesLine: {
+                            InventSerialId:serialno_search.Text ,
+                            SalesId: Label32_1.Text
+                        }
+                    }
+            
+             ))
+        Width: =40
+        X: =370
+        Y: =231
+        ZIndex: =16
+
+    Button7_2 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(152, 208, 70, 1)
+        OnSelect: |
+            =ConfirmSO.confirmso
+            (
+                {
+                    _confirm:
+                    {
+                    SalesId:Label32_1.Text
+                }
+            });
+            Notify("Order has been created");
+        Text: ="Confirm Order"
+        X: =677
+        Y: =725
+        ZIndex: =17
+
+    Button6 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 191, 0, 1)
+        OnSelect: |-
+            =Set(createsoheader,
+            SOHeaderCreation.Createsoheader(
+                {
+                    _create:
+                    {
+                    CustAccount:cust_id.Text
+                }
+            }))
+        Text: ="Create Sales Order"
+        Width: =217
+        X: =555
+        Y: =231
+        ZIndex: =18
+
+    Label33 As label:
+        Text: ="Order Details"
+        X: =1057
+        Y: =219
+        ZIndex: =19
+
+    Label34 As label:
+        Text: ="Total"
+        X: =982
+        Y: =283
+        ZIndex: =20
+
+    Label37 As label:
+        Text: |-
+            =Text(Sum(transaction.AllItems,Price),"[$-en-us]$#,###")
+        X: =1100
+        Y: =280
+        ZIndex: =21
+
+    Label34_2 As label:
+        Height: =44
+        Text: ="Currency"
+        Width: =91
+        X: =982
+        Y: =323
+        ZIndex: =23
+
+    Label34_3 As label:
+        Height: =52
+        Text: ="Payment Method"
+        Width: =109
+        X: =982
+        Y: =367
+        ZIndex: =24
+
+    Label34_4 As label:
+        Height: =52
+        Text: ="Tax"
+        Width: =109
+        X: =982
+        Y: =417
+        ZIndex: =25
+
+    Label34_5 As label:
+        Height: =43
+        Text: ="Total-After Tax"
+        Width: =109
+        X: =982
+        Y: =469
+        ZIndex: =26
+
+    Label34_6 As label:
+        Height: =43
+        Text: ="Deposit"
+        Width: =109
+        X: =982
+        Y: =526
+        ZIndex: =27
+
+    Label34_7 As label:
+        Height: =43
+        Text: ="Balance Amount"
+        Width: =109
+        X: =982
+        Y: =569
+        ZIndex: =28
+
+    Button8 As button:
+        Fill: =RGBA(0, 0, 0, 1)
+        OnSelect: |-
+            =CreatePaymentHW.CreatePayment(
+                {
+                    _paymentScreen: {
+                        SalesId: Label32_1.Text,
+                        TransDate: DatePicker1.SelectedDate,
+                        Amount: Value(Label37.Text),
+                        CurrencyCodeBase: Dropdown1.Selected.Value,
+                        PaymentMethod: Dropdown2.Selected.Value
+                    }
+                }
+            )
+        Text: ="Pay"
+        Width: =247
+        X: =1057
+        Y: =725
+        ZIndex: =29
+
+    Label37_1 As label:
+        Text: =""
+        Visible: =//Sum(transaction.AllItems,Price)
+        X: =1105
+        Y: =323
+        ZIndex: =30
+
+    Label34_8 As label:
+        Height: =43
+        Text: ="Transaction Date"
+        Width: =109
+        X: =982
+        Y: =625
+        ZIndex: =31
+
+    DatePicker1 As datepicker:
+        Height: =43
+        Width: =172
+        X: =1105
+        Y: =625
+        ZIndex: =32
+
+    Dropdown1 As dropdown:
+        Height: =38
+        Items: =["USD","EUR","AUD","JPY","AED","CNY"]
+        Width: =172
+        X: =1105
+        Y: =325
+        ZIndex: =33
+
+    Dropdown2 As dropdown:
+        Height: =41
+        Items: =["Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
+        Width: =172
+        X: =1105
+        Y: =376
+        ZIndex: =34
+
+    Label39 As label:
+        Height: =43
+        Text: ="Text"
+        Width: =172
+        X: =1105
+        Y: =569
+        ZIndex: =35
+

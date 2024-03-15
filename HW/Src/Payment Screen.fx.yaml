@@ -1,0 +1,468 @@
+"'Payment Screen' As screen":
+
+    Button1_1 As button:
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =58
+        OnSelect: |
+            =
+            //ClearCollect(SerialCollect2,{});
+            
+            //ForAll(GettingItemDetails_1.AllItems, Collect(SerialCollect2,{ItemN0:Label3.Text,SerialNo:Label3_1.Text,ManufactureDate:Label3_2.Text,Company:Label3_3.Text}));
+            
+            //Set(JsonData2, JSON(SerialCollect2));
+            
+            
+            ConfirmSO.confirmso
+            (
+                {
+                    _confirm:
+                    {
+                    SalesId:salesorderno.Text
+                }
+            });
+            Notify("Order has been created");
+        Text: ="Confirm Order"
+        Width: =183
+        X: =476
+        Y: =702
+        ZIndex: =1
+
+    Button1_2 As button:
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =55
+        OnSelect: |-
+            =
+            //ClearCollect(SerialCollect2,{});
+            //ForAll(GettingItemDetails_1.AllItems, Collect(SerialCollect2,{ItemN0:Label3.Text,SerialNo:Label3_1.Text,ManufactureDate:Label3_2.Text,Company:Label3_3.Text}));
+            //Set(JsonData2, JSON(SerialCollect2));
+            
+            
+            
+            CancelSO.cancelso
+                 (
+                {
+                    _cancel: 
+                    {
+                        SalesId: salesorderno.Text
+                    }
+                });
+            Notify("Order has been cancelled")
+        Text: ="Cancel Order"
+        Width: =183
+        X: =23
+        Y: =705
+        ZIndex: =2
+
+    Label10_3 As label:
+        Fill: =RGBA(26, 26, 26, 1)
+        Height: =75
+        Text: ="Text"
+        Width: =1366
+        ZIndex: =3
+
+    Image1_3 As image:
+        Height: =75
+        Image: =image
+        Width: =173
+        ZIndex: =4
+
+    Label2_3 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Size: =14
+        Text: ="Sales Order No"
+        X: =817
+        Y: =17
+        ZIndex: =5
+
+    salesorderno1 As label:
+        Fill: =RGBA(215, 223, 240, 1)
+        Text: =createsoheader.SalesId
+        Width: =216
+        X: =967
+        Y: =17
+        ZIndex: =6
+
+    Customer_Info_Gallery As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =185
+        Items: =Gallery1_1.Selected
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =149
+        Width: =609
+        X: =20
+        Y: =192
+        ZIndex: =7
+
+        Label18 As label:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =30
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Customer Name:"
+            Width: =160
+            X: =15
+            Y: =3
+            ZIndex: =1
+
+        Label18_1 As label:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =31
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Customer Id:"
+            Width: =138
+            X: =15
+            Y: =54
+            ZIndex: =2
+
+        Label19 As label:
+            Fill: =RGBA(204, 231, 246, 1)
+            Height: =30
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.CustomerName
+            Width: =364
+            X: =175
+            Y: =3
+            ZIndex: =6
+
+        Label19_5 As label:
+            Fill: =RGBA(204, 231, 246, 1)
+            Height: =31
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.CustomerId
+            Width: =364
+            X: =175
+            Y: =54
+            ZIndex: =7
+
+        Label23 As label:
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Total Amount:"
+            X: =9
+            Y: =97
+            ZIndex: =8
+
+        Label19_6 As label:
+            Fill: =RGBA(204, 231, 246, 1)
+            Height: =31
+            OnSelect: =Select(Parent)
+            Text: =
+            Width: =364
+            X: =175
+            Y: =106
+            ZIndex: =9
+
+    Label21 As label:
+        Align: =Align.Center
+        Fill: =RGBA(253, 222, 207, 1)
+        Height: =48
+        Text: ="Customer Information"
+        Width: =667
+        X: =23
+        Y: =143
+        ZIndex: =8
+
+    Label24 As label:
+        Align: =Align.Center
+        Fill: =RGBA(238, 204, 204, 1)
+        Text: ="Payment Details"
+        Width: =639
+        X: =20
+        Y: =422
+        ZIndex: =9
+
+    Payment_Details_Gallery As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =199
+        Items: =CustomGallerySample
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =194
+        Width: =639
+        X: =20
+        Y: =480
+        ZIndex: =10
+
+        Label25 As label:
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Sales Order No:"
+            X: =4
+            Y: =4
+            ZIndex: =1
+
+        Label25_1 As label:
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Status:"
+            X: =4
+            Y: =72
+            ZIndex: =2
+
+        Label27 As label:
+            Fill: =RGBA(209, 232, 178, 1)
+            OnSelect: =Select(Parent)
+            Text: =
+            Width: =280
+            X: =167
+            Y: =4
+            ZIndex: =3
+
+        Label27_1 As label:
+            Fill: =RGBA(209, 232, 178, 1)
+            OnSelect: =Select(Parent)
+            Text: =
+            Width: =280
+            X: =167
+            Y: =72
+            ZIndex: =4
+
+    Label26 As label:
+        Height: =33
+        Text: |-
+            ="Select Mode Of Payment:"
+        Width: =225
+        X: =764
+        Y: =99
+        ZIndex: =11
+
+    Icon7 As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =35
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate('Sales Order',ScreenTransition.Fade)
+        Width: =67
+        X: =323
+        Y: =22
+        ZIndex: =12
+
+    Payment_History As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Fill: =RGBA(209, 232, 178, 1)
+        Height: =193
+        Items: =pythstr
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =80
+        Width: =676
+        X: =690
+        Y: =512
+        ZIndex: =14
+
+        Label31 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.TransDate  
+            Width: =122
+            X: =4
+            Y: =12
+            ZIndex: =1
+
+        Label31_1 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.SalesId
+            Width: =122
+            X: =143
+            Y: =12
+            ZIndex: =2
+
+        Label31_2 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Amount
+            Width: =122
+            X: =283
+            Y: =12
+            ZIndex: =3
+
+        Label31_3 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.CurrencyCodeBase
+            Width: =122
+            X: =412
+            Y: =12
+            ZIndex: =4
+
+        Label31_4 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.PaymentMethod
+            Width: =122
+            X: =548
+            Y: =12
+            ZIndex: =5
+
+    Label29 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =32
+        Text: ="Transaction Date"
+        Width: =152
+        X: =690
+        Y: =477
+        ZIndex: =15
+
+    Label29_1 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =32
+        Text: ="SO"
+        Width: =122
+        X: =845
+        Y: =477
+        ZIndex: =16
+
+    Label29_2 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =32
+        Text: ="Amount"
+        Width: =122
+        X: =967
+        Y: =477
+        ZIndex: =17
+
+    Label29_3 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =32
+        Text: ="Currency"
+        Width: =122
+        X: =1095
+        Y: =477
+        ZIndex: =18
+
+    Label29_4 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =32
+        Text: ="MoP"
+        Width: =149
+        X: =1217
+        Y: =477
+        ZIndex: =19
+
+    Button4 As button:
+        Fill: =RGBA(0, 0, 0, 1)
+        OnSelect: |-
+            =CreatePaymentHW.CreatePayment(
+                {
+                    _paymentScreen: {
+                        SalesId: salesorderno1.Text,
+                        TransDate: TransactionDate.Text,
+                        Amount: Amount_INput.Text,
+                        CurrencyCodeBase: CurrencyType.Text,
+                        PaymentMethod: PaymentMode.Text
+                    }
+                }
+            )
+        Text: ="Pay"
+        X: =1023
+        Y: =357
+        ZIndex: =21
+
+    Label11 As label:
+        Height: =39
+        Text: |-
+            ="Transaction Date:"
+        Width: =203
+        X: =764
+        Y: =153
+        ZIndex: =22
+
+    AmountTxt As label:
+        Height: =32
+        Text: |-
+            ="Amount:"
+        Width: =192
+        X: =769
+        Y: =211
+        ZIndex: =24
+
+    Amount_INput As text:
+        Default: =""
+        Height: =32
+        HintText: ="Enter Amount"
+        Width: =316
+        X: =989
+        Y: =213
+        ZIndex: =25
+
+    Currency_txt As label:
+        Height: =35
+        Text: |-
+            ="Currency Type:"
+        X: =766
+        Y: =268
+        ZIndex: =26
+
+    Payment_history_btn As button:
+        Color: =RGBA(56, 96, 178, 1)
+        Fill: =RGBA(238, 204, 204, 1)
+        Height: =39
+        OnSelect: |-
+            =ClearCollect(
+                pythstr,
+                PaymentHistoryHW.PaymentHistory({_paymentHistory: {SalesId: salesorderno1.Text}}).PaymentList
+            )
+        Text: ="Payment History"
+        Width: =676
+        X: =690
+        Y: =423
+        ZIndex: =28
+
+    PaymentMode As text:
+        Default: =""
+        HintText: ="Enter Payment Mode"
+        X: =985
+        Y: =99
+        ZIndex: =29
+
+    CurrencyType As text:
+        Default: =""
+        HintText: ="Enter CurrencyType"
+        X: =985
+        Y: =263
+        ZIndex: =30
+
+    TransactionDate As text:
+        Default: =""
+        Height: =39
+        HintText: ="Enter Transaction Date"
+        Width: =316
+        X: =989
+        Y: =153
+        ZIndex: =31
+
+    Button5 As button:
+        DisplayMode: |-
+            =DisplayMode.Edit
+            //If(varDisableButton=false, DisplayMode.Disabled, DisplayMode.Edit)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =55
+        OnSelect: |
+            =//Set(varDisableButton, false);
+            SOHold.holdsalesorder({_onHold:{  
+                  salesId: salesorderno1.Text
+                }
+            });
+            Notify("This Order is on Hold");
+        Text: ="Hold Order"
+        Width: =203
+        X: =244
+        Y: =705
+        ZIndex: =32
+

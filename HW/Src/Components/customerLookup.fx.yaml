@@ -1,0 +1,19 @@
+customerLookup As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    TextInput1 As text:
+        BorderColor: =RGBA(209, 210, 211, 1)
+        Default: ="Text input"
+        RadiusBottomLeft: =45
+        RadiusBottomRight: =45
+        RadiusTopLeft: =45
+        RadiusTopRight: =45
+        X: =10
+        Y: =5
+        ZIndex: =1
+

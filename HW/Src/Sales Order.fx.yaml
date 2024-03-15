@@ -1,0 +1,357 @@
+"'Sales Order' As screen":
+    OnVisible: |-
+        =UpdateContext({varShowPop:false})
+
+    Label10_1 As label:
+        Fill: =RGBA(26, 26, 26, 1)
+        Height: =75
+        Text: ="Text"
+        Width: =1366
+        ZIndex: =1
+
+    GettingItemDetails_1 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =223
+        Items: =serialcol
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =64
+        Width: =1362
+        X: =3
+        Y: =432
+        ZIndex: =8
+
+        Label3_6 As label:
+            Align: =Align.Center
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.ItemId
+            X: =56
+            Y: =2
+            ZIndex: =1
+
+        Label3_4 As label:
+            Align: =Align.Center
+            Height: =57
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.ItemName
+            Width: =158
+            X: =352
+            ZIndex: =2
+
+        Label3_5 As label:
+            Align: =Align.Center
+            Height: =44
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Price
+            Width: =176
+            X: =598
+            ZIndex: =3
+
+        Label3_7 As label:
+            Align: =Align.Center
+            Height: =42
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Quantity
+            Width: =171
+            X: =827
+            Y: =2
+            ZIndex: =4
+
+        Icon3_1 As icon.Cancel:
+            Height: =36
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =//Remove(SerialCollect,ThisItem)
+                
+                Remove(serialcol,ThisItem);
+                DeleteSalesOrderLine.deleteline
+                (
+                    {
+                        _delete:
+                        {
+                        SalesLineDelRecId:recid.Text
+                    }
+                })
+            Width: =52
+            X: =1216
+            ZIndex: =6
+
+        recid As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Sales line RecId'
+            Visible: =false
+            X: =998
+            Y: =8
+            ZIndex: =7
+
+    Label6_4 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Text: ="Item ID"
+        X: =63
+        Y: =391
+        ZIndex: =9
+
+    Label6_5 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Text: ="Item name"
+        X: =366
+        Y: =391
+        ZIndex: =10
+
+    Label6_6 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Text: ="Price"
+        Width: =182
+        X: =605
+        Y: =395
+        ZIndex: =11
+
+    Label6_7 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Text: ="Quantity"
+        X: =833
+        Y: =391
+        ZIndex: =12
+
+    Label8_2 As label:
+        Size: =14
+        Text: |-
+            ="Customers:"
+        Width: =212
+        X: =3
+        Y: =136
+        ZIndex: =15
+
+    Label8_3 As label:
+        Size: =14
+        Text: ="Serial no"
+        Width: =212
+        X: =10
+        Y: =357
+        ZIndex: =16
+
+    Image1_1 As image:
+        Height: =136
+        Image: =image
+        Width: =308
+        ZIndex: =17
+
+    Label2_1 As label:
+        Size: =14
+        Text: ="Sales Order No"
+        X: =1000
+        Y: =96
+        ZIndex: =18
+
+    salesorderno As label:
+        Fill: =RGBA(215, 223, 240, 1)
+        Size: =18
+        Text: =createsoheader.SalesId
+        Width: =216
+        X: =1150
+        Y: =96
+        ZIndex: =19
+
+    txtCustomerSearch_1 As text:
+        Clear: =true
+        Default: =
+        Font: =Font.Arial
+        Height: =36
+        HintText: ="Search customer by Id, Name, Phone, Email"
+        OnChange: |-
+            =If(
+                Len(txtCustomerSearch_1.Text) > 2,
+                ClearCollect(
+                    colCustomers,
+                    HWConnector.searchCustomer(
+                        {
+                            _contract: {
+                                Company: "USMF",
+                                SearchText: txtCustomerSearch_1.Text
+                            }
+                        }
+                    ).CustomersList
+                )
+            )
+        OnSelect: =txtCustomerSearch_1.Clear
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =390
+        X: =112
+        Y: =143
+        ZIndex: =20
+
+    "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Fill: =RGBA(241, 242, 243, 1)
+        Height: =164
+        Items: =colCustomers
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =89
+        Width: =350
+        X: =112
+        Y: =187
+        ZIndex: =21
+
+        Title2_1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.CustomerId & " - " & ThisItem.CustomerName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =15
+            Y: =15
+            ZIndex: =2
+
+        Subtitle1_1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.EMail
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2_1.Width
+            X: =15
+            Y: =40
+            ZIndex: =3
+
+        Separator1_1 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle1_1 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1_1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Icon4 As icon.Add:
+            Height: =50
+            Icon: =Icon.Add
+            OnSelect: |-
+                =Collect(ColInfo,(Gallery1_1.Selected));
+                If(ThisItem.IsSelected,UpdateContext({varShowPop:true}),"");
+                Set(createsoheader,
+                SOHeaderCreation.Createsoheader(
+                    {
+                        _create:
+                        {
+                        CustAccount:Text(Gallery1_1.Selected.CustomerId)
+                    }
+                }))
+            Width: =50
+            X: =296
+            Y: =8
+            ZIndex: =7
+
+    serialnumsearch As text:
+        Default: =""
+        HintText: ="Search by serial Number"
+        OnChange: |-
+            =//If(Len(TextInput4.Text)>2
+            //ClearCollect(ColSerial,
+            //SerialNum.SerialNum({_request:{InventSerialId:TextInput4.Text}}))
+            
+                
+        Width: =312
+        X: =108
+        Y: =357
+        ZIndex: =22
+
+    Icon1 As icon.Add:
+        Height: =51
+        Icon: =Icon.Add
+        OnSelect: |-
+            =ClearCollect(serialcol,
+             AddSalesline.addline(
+                    {
+                        _CreateSalesLine: {
+                            InventSerialId:serialnumsearch.Text ,
+                            SalesId: salesorderno.Text
+                        }
+                    }
+            
+             ))
+            
+            
+            
+            /*Set(
+                linadd,
+               AddSalesline.addline(
+                    {
+                        _CreateSalesLine: {
+                            InventSerialId:serialnumsearch.Text ,
+                            SalesId: salesorderno.Text
+                        }
+                    }
+                )
+            
+            )*/
+        Width: =42
+        X: =420
+        Y: =351
+        ZIndex: =23
+
+    Button2 As button:
+        Color: =RGBA(54, 176, 75, 1)
+        Fill: =RGBA(255, 255, 0, 1)
+        OnSelect: =Navigate('More Customer Details',ScreenTransition.None)
+        Text: ="View Customer Details"
+        Width: =240
+        X: =1103
+        Y: =18
+        ZIndex: =25
+
+    Showing_total_payment_txt As label:
+        Fill: =RGBA(232, 244, 217, 1)
+        Text: =""
+        Visible: =Sum(GettingItemDetails_1.AllItems,Price)
+        Width: =216
+        X: =637
+        Y: =679
+        ZIndex: =27
+
+    Button3 As button:
+        OnSelect: =Navigate('Payment Screen',ScreenTransition.Fade)
+        Text: ="Make Payment"
+        Width: =202
+        X: =1141
+        Y: =679
+        ZIndex: =28
+
+    Label20 As label:
+        Fill: =RGBA(253, 222, 207, 1)
+        Text: |-
+            ="Total Price:" & Sum(GettingItemDetails_1.AllItems,Price)
+        Visible: =
+        Width: =262
+        X: =649
+        Y: =679
+        ZIndex: =29
+

@@ -1,0 +1,53 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/add-20sales-20line-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="AddSalesline" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Add Sales line">This API is about to add new sales line against the SO</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/add-20sales-20line-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="addline_param_body_def__CreateSalesLine_def_InventSerialId_def" />
+      <string name="addline_param_body_def__CreateSalesLine_def_SalesId_def" />
+      <object name="addline_param_body_def__CreateSalesLine_def">
+        <property name="InventSerialId" type="string" />
+        <property name="SalesId" type="string" />
+      </object>
+      <object name="addline_param_body_def">
+        <property name="_CreateSalesLine" typeRef="addline_param_body_def__CreateSalesLine_def" />
+      </object>
+      <string name="addline_responses_default_def__ux24_id_def" />
+      <string name="addline_responses_default_def_ItemId_def" />
+      <string name="addline_responses_default_def_ItemName_def" />
+      <integer name="addline_responses_default_def_Quantity_def" />
+      <integer name="addline_responses_default_def_Price_def" />
+      <integer name="addline_responses_default_def_Sales_ux20_line_ux20_RecId_def" />
+      <object name="addline_responses_default_def">
+        <property name="$id" type="string" />
+        <property name="ItemId" type="string" />
+        <property name="ItemName" type="string" />
+        <property name="Quantity" type="integer" />
+        <property name="Price" type="integer" />
+        <property name="Sales line RecId" type="integer" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/add-20sales-20line-5f9676d0ca9689d770-5f4fe3078c820f4eba">
+    <resource path="/{connectionId}/api/services/HWStore/HWSalesLineCreationService/createSalesLine">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="addline" actionName="addline" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_CreateSalesLine" path="/_CreateSalesLine" type="service:addline_param_body_def__CreateSalesLine_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:addline_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_add-20sales-20line-5f9676d0ca9689d770-5f4fe3078c820f4eba" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_so-20header-20creation-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+    "Name": "SOHeaderCreation",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

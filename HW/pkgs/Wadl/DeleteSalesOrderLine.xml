@@ -1,0 +1,38 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/delete-20sales-20order-20line-5f9676d0ca9689d77-fbd31574402a0cd0" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="DeleteSalesOrderLine" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Delete Sales Order Line">This API is used to delete a sales order line against the sales order header</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/delete-20sales-20order-20line-5f9676d0ca9689d77-fbd31574402a0cd0" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="deleteline_param_body_def__delete_def_SalesLineDelRecId_def" />
+      <object name="deleteline_param_body_def__delete_def">
+        <property name="SalesLineDelRecId" type="string" />
+      </object>
+      <object name="deleteline_param_body_def">
+        <property name="_delete" typeRef="deleteline_param_body_def__delete_def" />
+      </object>
+      <untypedObject name="deleteline_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/delete-20sales-20order-20line-5f9676d0ca9689d77-fbd31574402a0cd0">
+    <resource path="/{connectionId}/api/services/HWStore/HWSalesLineDeletionService/deleteSaleLine">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="deleteline" actionName="deleteline" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_delete" path="/_delete" type="service:deleteline_param_body_def__delete_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:deleteline_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_delete-20sales-20order-20line-5f9676d0ca9689d77-fbd31574402a0cd0" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

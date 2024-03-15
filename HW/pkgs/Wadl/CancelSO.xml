@@ -1,0 +1,38 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/cancel-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="CancelSO" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Cancel SO">This API is to cancel sales order.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/cancel-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="cancelso_param_body_def__cancel_def_SalesId_def" />
+      <object name="cancelso_param_body_def__cancel_def">
+        <property name="SalesId" type="string" />
+      </object>
+      <object name="cancelso_param_body_def">
+        <property name="_cancel" typeRef="cancelso_param_body_def__cancel_def" />
+      </object>
+      <untypedObject name="cancelso_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/cancel-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba">
+    <resource path="/{connectionId}/api/services/HWStore/HWSalesOrderCancelService/soCancel">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="cancelso" actionName="cancelso" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_cancel" path="/_cancel" type="service:cancelso_param_body_def__cancel_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:cancelso_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_cancel-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_delete-20sales-20order-20line-5f9676d0ca9689d77-fbd31574402a0cd0",
+    "Name": "DeleteSalesOrderLine",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

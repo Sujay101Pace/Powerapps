@@ -1,0 +1,57 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/payment-20history-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="PaymentHistoryHW" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Payment History HW">Creating second API for showing payment history</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/payment-20history-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="PaymentHistory_param_body_def__paymentHistory_def_SalesId_def" />
+      <object name="PaymentHistory_param_body_def__paymentHistory_def">
+        <property name="SalesId" type="string" />
+      </object>
+      <object name="PaymentHistory_param_body_def">
+        <property name="_paymentHistory" typeRef="PaymentHistory_param_body_def__paymentHistory_def" />
+      </object>
+      <string name="PaymentHistory_responses_default_def__ux24_id_def" />
+      <string name="PaymentHistory_responses_default_def_PaymentList_def_items_def__ux24_id_def" />
+      <string name="PaymentHistory_responses_default_def_PaymentList_def_items_def_SalesId_def" />
+      <string name="PaymentHistory_responses_default_def_PaymentList_def_items_def_TransDate_def" />
+      <integer name="PaymentHistory_responses_default_def_PaymentList_def_items_def_Amount_def" />
+      <string name="PaymentHistory_responses_default_def_PaymentList_def_items_def_CurrencyCodeBase_def" />
+      <string name="PaymentHistory_responses_default_def_PaymentList_def_items_def_PaymentMethod_def" />
+      <object name="PaymentHistory_responses_default_def_PaymentList_def_items_def">
+        <property name="$id" type="string" />
+        <property name="SalesId" type="string" />
+        <property name="TransDate" type="string" />
+        <property name="Amount" type="integer" />
+        <property name="CurrencyCodeBase" type="string" />
+        <property name="PaymentMethod" type="string" />
+      </object>
+      <array typeRef="PaymentHistory_responses_default_def_PaymentList_def_items_def" name="PaymentHistory_responses_default_def_PaymentList_def" />
+      <object name="PaymentHistory_responses_default_def">
+        <property name="$id" type="string" />
+        <property name="PaymentList" typeRef="PaymentHistory_responses_default_def_PaymentList_def" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/payment-20history-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba">
+    <resource path="/{connectionId}/api/services/HWStore/HWPaymentReturnService/returnPayment">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="PaymentHistory" actionName="PaymentHistory" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_paymentHistory" path="/_paymentHistory" type="service:PaymentHistory_param_body_def__paymentHistory_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PaymentHistory_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_payment-20history-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

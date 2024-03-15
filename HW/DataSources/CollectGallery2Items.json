@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "CollectGallery2Items",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

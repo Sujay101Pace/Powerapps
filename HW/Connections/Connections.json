@@ -1,0 +1,230 @@
+{
+  "20c28dd7-3c08-42f0-869b-2aec74ad6340": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "displayName": "Fin & Ops Apps (Dynamics 365)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3450/dynamicsax/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_dynamicsax",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "sainacloud221c3d746a7b1021devaos.axcloud.dynamics.com": {
+        "dataSources": {
+          "CustomersV3": {
+            "tableName": "CustomersV3"
+          },
+          "ItemSerialNumbers": {
+            "tableName": "ItemSerialNumbers"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "CustomersV3",
+      "ItemSerialNumbers"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "20c28dd7-3c08-42f0-869b-2aec74ad6340"
+  },
+  "35594d3c-6362-4b15-acca-6e31ebd8e465": {
+    "appActions": [
+      "holdsalesorder"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "oauth2-auth",
+      "displayName": "SOHold",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sohold-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "SOHold"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "35594d3c-6362-4b15-acca-6e31ebd8e465"
+  },
+  "4170b0c4-387a-424f-8668-02fdcd39fb7b": {
+    "appActions": [
+      "deleteline"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "oauth2-auth",
+      "displayName": "Delete Sales Order Line",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_delete-20sales-20order-20line-5f9676d0ca9689d77-fbd31574402a0cd0",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "DeleteSalesOrderLine"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "4170b0c4-387a-424f-8668-02fdcd39fb7b"
+  },
+  "4aaea0a7-5f9d-4dd6-b69d-63c72d97e36a": {
+    "appActions": [
+      "Createsoheader"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "oauth2-auth",
+      "displayName": "SO Header Creation",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_so-20header-20creation-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "SOHeaderCreation"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "4aaea0a7-5f9d-4dd6-b69d-63c72d97e36a"
+  },
+  "612a1a56-ee50-49be-acc5-44568ac49256": {
+    "appActions": [
+      "PaymentHistory"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Payment History HW",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_payment-20history-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "PaymentHistoryHW"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "612a1a56-ee50-49be-acc5-44568ac49256"
+  },
+  "6d0aa861-b728-4dab-833e-4a858dae45b2": {
+    "appActions": [
+      "confirmso"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "oauth2-auth",
+      "displayName": "Confirm SO",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_confirm-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "ConfirmSO"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6d0aa861-b728-4dab-833e-4a858dae45b2"
+  },
+  "7643c029-a59d-461b-b357-802c545f976a": {
+    "appActions": [
+      "cancelso"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "oauth2-auth",
+      "displayName": "Cancel SO",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_cancel-20so-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "CancelSO"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7643c029-a59d-461b-b357-802c545f976a"
+  },
+  "a5811082-4ff2-4131-9067-a4db12e8f1cb": {
+    "appActions": [
+      "addline"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "oauth2-auth",
+      "displayName": "Add Sales line",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_add-20sales-20line-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "AddSalesline"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a5811082-4ff2-4131-9067-a4db12e8f1cb"
+  },
+  "c820ae31-43fb-4987-b729-8022541806be": {
+    "appActions": [
+      "searchCustomer"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "oauth2-auth",
+      "displayName": "HWConnector",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_hwconnector-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "HWConnector"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "c820ae31-43fb-4987-b729-8022541806be"
+  },
+  "e059fb8a-85bb-435e-852f-e928266a924e": {
+    "appActions": [
+      "CreatePayment"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Create Payment HW",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_create-20payment-20hw-5f9676d0ca9689d770-5f4fe3078c820f4eba",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "CreatePaymentHW"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e059fb8a-85bb-435e-852f-e928266a924e"
+  }
+}

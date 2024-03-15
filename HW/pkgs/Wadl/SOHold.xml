@@ -1,0 +1,38 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/sohold-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="SOHold" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="SOHold">This API is used to hold the order against the customer</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/sohold-5f9676d0ca9689d770-5f4fe3078c820f4eba" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="holdsalesorder_param_body_def__onHold_def_salesId_def" />
+      <object name="holdsalesorder_param_body_def__onHold_def">
+        <property name="salesId" type="string" />
+      </object>
+      <object name="holdsalesorder_param_body_def">
+        <property name="_onHold" typeRef="holdsalesorder_param_body_def__onHold_def" />
+      </object>
+      <untypedObject name="holdsalesorder_responses_default_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/sohold-5f9676d0ca9689d770-5f4fe3078c820f4eba">
+    <resource path="/{connectionId}/api/services/HWStore/HWOnHoldService/soOnHold">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="holdsalesorder" actionName="holdsalesorder" siena:isDeprecated="false">
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="_onHold" path="/_onHold" type="service:holdsalesorder_param_body_def__onHold_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:holdsalesorder_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_sohold-5f9676d0ca9689d770-5f4fe3078c820f4eba" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>
