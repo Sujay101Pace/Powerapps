@@ -104,23 +104,7 @@
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(152, 208, 70, 1)
         OnSelect: |-
-            =
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            /*CancelSO.cancelso
+            =CancelSO.cancelso
                  (
                 {
                     _cancel: 
@@ -128,7 +112,7 @@
                         SalesId: Label32_1.Text
                     }
                 });
-            Notify("This Order has been cancelled")*/
+            Notify("This Order has been cancelled")
         Text: ="Cancel Order"
         X: =395
         Y: =725
