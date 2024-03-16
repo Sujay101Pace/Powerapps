@@ -7,12 +7,6 @@
         Width: =1366
         ZIndex: =1
 
-    Image1_6 As image:
-        Height: =75
-        Image: =image
-        Width: =173
-        ZIndex: =2
-
     Label12_2 As label:
         Align: =Align.Center
         Color: =RGBA(255, 255, 255, 1)
@@ -77,11 +71,30 @@
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(152, 208, 70, 1)
         OnSelect: |-
-            =SOHold.holdsalesorder({_onHold:{  
+            =
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            /*SOHold.holdsalesorder({_onHold:{  
                   salesId: Label32_1.Text
                 }
             });
-            Notify("This order is on hold");
+            Notify("This order is on hold");*/
         Text: ="Hold Order"
         X: =130
         Y: =725
@@ -91,7 +104,23 @@
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(152, 208, 70, 1)
         OnSelect: |-
-            =CancelSO.cancelso
+            =
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            /*CancelSO.cancelso
                  (
                 {
                     _cancel: 
@@ -99,7 +128,7 @@
                         SalesId: Label32_1.Text
                     }
                 });
-            Notify("This Order has been cancelled")
+            Notify("This Order has been cancelled")*/
         Text: ="Cancel Order"
         X: =395
         Y: =725
@@ -259,7 +288,21 @@
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(152, 208, 70, 1)
         OnSelect: |
-            =ConfirmSO.confirmso
+            =
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            /*ConfirmSO.confirmso
             (
                 {
                     _confirm:
@@ -267,7 +310,7 @@
                     SalesId:Label32_1.Text
                 }
             });
-            Notify("Order has been created");
+            Notify("Order has been created");*/
         Text: ="Confirm Order"
         X: =677
         Y: =725
