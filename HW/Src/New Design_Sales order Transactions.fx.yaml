@@ -288,21 +288,7 @@
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(152, 208, 70, 1)
         OnSelect: |
-            =
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            /*ConfirmSO.confirmso
+            =ConfirmSO.confirmso
             (
                 {
                     _confirm:
@@ -310,7 +296,7 @@
                     SalesId:Label32_1.Text
                 }
             });
-            Notify("Order has been created");*/
+            Notify("Order has been confirmed");
         Text: ="Confirm Order"
         X: =677
         Y: =725
