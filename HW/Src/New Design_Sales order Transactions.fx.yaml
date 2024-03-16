@@ -71,30 +71,11 @@
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(152, 208, 70, 1)
         OnSelect: |-
-            =
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            /*SOHold.holdsalesorder({_onHold:{  
+            =SOHold.holdsalesorder({_onHold:{  
                   salesId: Label32_1.Text
                 }
             });
-            Notify("This order is on hold");*/
+            Notify("This order is on hold");
         Text: ="Hold Order"
         X: =130
         Y: =725
