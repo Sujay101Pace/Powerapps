@@ -433,7 +433,8 @@
 
     Label38 As label:
         Height: =35
-        Text: =Value(Total_amt.Text)-Value(Deposit.Text)
+        Text: |-
+            =Text(Value(Total_amt.Text)-Value(Deposit.Text),"[$-en-us]$#,###")
         Width: =172
         X: =1105
         Y: =577
