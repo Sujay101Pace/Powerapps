@@ -249,7 +249,7 @@
                     {
                         _CreateSalesLine: {
                             InventSerialId:serialno_search.Text,
-                            SalesId: Value(Label32_1)
+                            SalesId: Label32_1.Text
                         }
                     }
             )
