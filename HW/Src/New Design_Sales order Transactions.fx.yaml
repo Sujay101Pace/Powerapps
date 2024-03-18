@@ -405,8 +405,9 @@
         ZIndex: =32
 
     Dropdown1 As dropdown:
+        Default: ="Select here"
         Height: =38
-        Items: =["","USD","EUR","AUD","JPY","AED","CNY"]
+        Items: =["Select here","USD","EUR","AUD","JPY","AED","CNY"]
         Width: =172
         X: =1105
         Y: =325
@@ -414,17 +415,25 @@
 
     Dropdown2 As dropdown:
         Height: =41
-        Items: =["Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
+        Items: =["Select here","Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
         Width: =172
         X: =1105
         Y: =376
         ZIndex: =34
 
-    Label39 As label:
-        Height: =43
+    TextInput4 As text:
+        Default: =""
+        Height: =42
+        Width: =172
+        X: =1105
+        Y: =527
+        ZIndex: =35
+
+    Label38 As label:
+        Height: =35
         Text: ="Text"
         Width: =172
         X: =1105
-        Y: =569
-        ZIndex: =35
+        Y: =577
+        ZIndex: =36
 

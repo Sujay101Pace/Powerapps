@@ -2791,6 +2791,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'New Design_Sales order Transactions'.TextInput4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Design_Sales order Transactions'.TextInput4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Design_Sales order Transactions",
+                "type": "'New Design_Sales order Transactions'.TextInput4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Payment Screen'.Customer_Info_Gallery.Items"
                 }
               ],
