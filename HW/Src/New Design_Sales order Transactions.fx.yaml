@@ -244,7 +244,7 @@
         Height: =40
         Icon: =Icon.Add
         OnSelect: |-
-            =Collect(serialcol,
+            =/*Collect(serialcol,
             AddSalesline.addline(
                     {
                         _CreateSalesLine: {
@@ -252,8 +252,9 @@
                             SalesId: Label32_1.Text
                         }
                     }
-            
-             ))
+            )
+            )*/
+            Collect(serialcol,AddSalesline.addline({_CreateSalesLine:{InventSerialId:serialno_search.Text,SalesId:Text(Label32_1)}}))
         Visible: =ShowInputBox
         Width: =40
         X: =370
