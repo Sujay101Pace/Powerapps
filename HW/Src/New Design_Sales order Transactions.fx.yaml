@@ -25,7 +25,8 @@
         Icon: =Icon.Cancel
         OnSelect: |-
             =Navigate('New Design_Dashboard');
-            UpdateContext({Label32_1: ""})
+            UpdateContext({Label32_1: ""});
+            UpdateContext({Label32:""});
         X: =1277
         Y: =11
         ZIndex: =4
