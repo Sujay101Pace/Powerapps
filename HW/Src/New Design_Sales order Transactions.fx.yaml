@@ -260,10 +260,10 @@
         Y: =231
         ZIndex: =16
 
-    Button7_2 As button:
+    confirm_order As button:
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(152, 208, 70, 1)
-        OnSelect: |
+        OnSelect: |-
             =ConfirmSO.confirmso
             (
                 {
@@ -364,7 +364,7 @@
         Y: =569
         ZIndex: =28
 
-    Button8 As button:
+    pay_btn As button:
         Fill: =RGBA(0, 0, 0, 1)
         OnSelect: |-
             =CreatePaymentHW.CreatePayment(
