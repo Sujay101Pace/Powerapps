@@ -28,7 +28,7 @@
             =Navigate('New Design_Dashboard');
             UpdateContext({Label32_1: ""});
             UpdateContext({Label32:""});
-            Clear(serialcol);
+            //Clear(serialcol);
             Reset(serialno_search);
             Reset(Dropdown1);
             Reset(Dropdown2);
@@ -244,17 +244,16 @@
         Height: =40
         Icon: =Icon.Add
         OnSelect: |-
-            =/*Collect(serialcol,
+            =Collect(serialcol,
             AddSalesline.addline(
                     {
                         _CreateSalesLine: {
                             InventSerialId:serialno_search.Text,
-                            SalesId: Label32_1.Text
+                            SalesId: Value(Label32_1)
                         }
                     }
             )
-            )*/
-            Collect(serialcol,AddSalesline.addline({_CreateSalesLine:{InventSerialId:serialno_search.Text,SalesId:Text(Label32_1)}}))
+            )
         Visible: =ShowInputBox
         Width: =40
         X: =370
