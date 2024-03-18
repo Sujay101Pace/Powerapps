@@ -81,7 +81,7 @@
         Fill: =RGBA(152, 208, 70, 1)
         OnSelect: |-
             =SOHold.holdsalesorder({_onHold:{  
-                  salesId: Label32_1.Text
+                  salesId: Label37.Text
                 }
             });
             Notify("This order is on hold");
@@ -99,7 +99,7 @@
                 {
                     _cancel: 
                     {
-                        SalesId: Label32_1.Text
+                        SalesId: Label37.Text
                     }
                 });
             Notify("This Order has been cancelled")
@@ -249,7 +249,7 @@
                     {
                         _CreateSalesLine: {
                             InventSerialId:serialno_search.Text,
-                            SalesId: Label32_1.Text
+                            SalesId: Label37.Text
                         }
                     }
             )
@@ -269,7 +269,7 @@
                 {
                     _confirm:
                     {
-                    SalesId:Label32_1.Text
+                    SalesId:Label37.Text
                 }
             });
             Notify("Order has been confirmed");
@@ -370,7 +370,7 @@
             =CreatePaymentHW.CreatePayment(
                 {
                     _paymentScreen: {
-                        SalesId: Label32_1.Text,
+                        SalesId: Label37.Text,
                         TransDate: DatePicker1.SelectedDate,
                         Amount: Value(Total_amt.Text),
                         CurrencyCodeBase: Dropdown1.Selected.Value,
@@ -439,4 +439,11 @@
         X: =1105
         Y: =577
         ZIndex: =36
+
+    Label37 As label:
+        Text: =createsoheader.SalesId
+        Visible: =false
+        X: =784
+        Y: =159
+        ZIndex: =37
 
