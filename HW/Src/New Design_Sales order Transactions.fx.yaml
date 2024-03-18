@@ -1,4 +1,5 @@
 "'New Design_Sales order Transactions' As screen":
+    OnVisible: =Set(ShowInputBox, false)
 
     Label10_6 As label:
         Fill: =RGBA(26, 26, 26, 1)
@@ -114,6 +115,7 @@
         Clear: =true
         Default: =""
         HintText: ="Search by serial no"
+        Visible: =ShowInputBox
         X: =37
         Y: =231
         ZIndex: =13
@@ -281,11 +283,12 @@
                     {
                     CustAccount:cust_id.Text
                 }
-            }))
+            }));
+            Set(ShowInputBox, true)
         Text: ="Create Sales Order"
         Width: =217
-        X: =555
-        Y: =231
+        X: =491
+        Y: =168
         ZIndex: =18
 
     Label33 As label:
