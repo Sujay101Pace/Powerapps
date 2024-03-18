@@ -1,5 +1,5 @@
 "'New Design_Sales order Transactions' As screen":
-    OnVisible: =Set(ShowInputBox, false)
+    OnVisible: =Set(ShowInputBox,false)
 
     Label10_6 As label:
         Fill: =RGBA(26, 26, 26, 1)
