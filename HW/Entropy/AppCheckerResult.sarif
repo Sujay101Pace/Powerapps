@@ -104,7 +104,7 @@
                 },
                 "region": {
                   "charLength": 5,
-                  "charOffset": 172,
+                  "charOffset": 171,
                   "snippet": {
                     "text": ".Text"
                   }
@@ -141,7 +141,7 @@
                 },
                 "region": {
                   "charLength": 151,
-                  "charOffset": 50,
+                  "charOffset": 49,
                   "snippet": {
                     "text": "{\n            _CreateSalesLine: {\n                InventSerialId:serialno_search.Text ,\n                SalesId: Label32_1.Text\n            }\n        }"
                   }
@@ -183,7 +183,7 @@
                 },
                 "region": {
                   "charLength": 185,
-                  "charOffset": 20,
+                  "charOffset": 19,
                   "snippet": {
                     "text": "AddSalesline.addline(\n        {\n            _CreateSalesLine: {\n                InventSerialId:serialno_search.Text ,\n                SalesId: Label32_1.Text\n            }\n        }\n\n )"
                   }

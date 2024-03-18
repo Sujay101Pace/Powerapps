@@ -245,7 +245,7 @@
         Icon: =Icon.Add
         OnSelect: |-
             =Collect(serialcol,
-             AddSalesline.addline(
+            AddSalesline.addline(
                     {
                         _CreateSalesLine: {
                             InventSerialId:serialno_search.Text ,
