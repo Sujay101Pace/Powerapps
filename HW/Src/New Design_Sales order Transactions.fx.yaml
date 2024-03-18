@@ -414,7 +414,7 @@
 
     Dropdown2 As dropdown:
         Height: =41
-        Items: =["","Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
+        Items: =["Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
         Width: =172
         X: =1105
         Y: =376
