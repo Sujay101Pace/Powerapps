@@ -31,7 +31,7 @@
             Clear(serialcol);
             Reset(serialno_search);
             Reset(Dropdown1);
-            Reset(Dropdown2)
+            Reset(Dropdown2);
         X: =1277
         Y: =11
         ZIndex: =4
@@ -248,7 +248,7 @@
             AddSalesline.addline(
                     {
                         _CreateSalesLine: {
-                            InventSerialId:serialno_search.Text ,
+                            InventSerialId:serialno_search.Text,
                             SalesId: Label32_1.Text
                         }
                     }
