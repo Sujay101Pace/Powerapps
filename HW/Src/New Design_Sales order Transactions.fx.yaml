@@ -406,7 +406,7 @@
 
     Dropdown1 As dropdown:
         Height: =38
-        Items: =["USD","EUR","AUD","JPY","AED","CNY"]
+        Items: =["","USD","EUR","AUD","JPY","AED","CNY"]
         Width: =172
         X: =1105
         Y: =325
@@ -414,7 +414,7 @@
 
     Dropdown2 As dropdown:
         Height: =41
-        Items: =["Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
+        Items: =["","Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
         Width: =172
         X: =1105
         Y: =376
