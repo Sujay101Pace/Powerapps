@@ -2792,6 +2792,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'New Design_Sales order Transactions'.Label32_1"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Design_Sales order Transactions'.Label32_1",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Label32_1",
+                "module": "New Design_Sales order Transactions",
+                "type": "'New Design_Sales order Transactions'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'New Design_Sales order Transactions'.Label32.Text"
                 }
               ],
