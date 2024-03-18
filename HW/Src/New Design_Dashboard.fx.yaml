@@ -162,3 +162,9 @@
         Y: =107
         ZIndex: =11
 
+    Image1_4 As image:
+        Height: =75
+        Image: =image
+        Width: =173
+        ZIndex: =12
+

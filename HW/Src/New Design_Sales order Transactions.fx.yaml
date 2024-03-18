@@ -28,7 +28,7 @@
             =Navigate('New Design_Dashboard');
             UpdateContext({Label32_1: ""});
             UpdateContext({Label32:""});
-            //Clear(serialcol);
+            Clear(serialcol);
             Reset(serialno_search);
             Reset(Dropdown1);
             Reset(Dropdown2);
@@ -446,4 +446,10 @@
         X: =784
         Y: =159
         ZIndex: =37
+
+    Image1_6 As image:
+        Height: =75
+        Image: =image
+        Width: =173
+        ZIndex: =38
 
