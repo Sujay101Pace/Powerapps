@@ -309,7 +309,7 @@
         Y: =283
         ZIndex: =20
 
-    Label37 As label:
+    Total_amt As label:
         Text: |-
             =Text(Sum(transaction.AllItems,Price),"[$-en-us]$#,###")
         X: =1100
@@ -372,7 +372,7 @@
                     _paymentScreen: {
                         SalesId: Label32_1.Text,
                         TransDate: DatePicker1.SelectedDate,
-                        Amount: Value(Label37.Text),
+                        Amount: Value(Total_amt.Text),
                         CurrencyCodeBase: Dropdown1.Selected.Value,
                         PaymentMethod: Dropdown2.Selected.Value
                     }
@@ -423,7 +423,7 @@
         Y: =376
         ZIndex: =34
 
-    TextInput4 As text:
+    Deposit As text:
         Default: =""
         Height: =42
         Width: =172
@@ -433,7 +433,7 @@
 
     Label38 As label:
         Height: =35
-        Text: ="Text"
+        Text: =Value(Total_amt.Text)-Value(Deposit.Text)
         Width: =172
         X: =1105
         Y: =577

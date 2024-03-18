@@ -140,10 +140,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 278,
+                  "charLength": 280,
                   "charOffset": 35,
                   "snippet": {
-                    "text": "{\n        _paymentScreen: {\n            SalesId: Label32_1.Text,\n            TransDate: DatePicker1.SelectedDate,\n            Amount: Value(Label37.Text),\n            CurrencyCodeBase: Dropdown1.Selected.Value,\n            PaymentMethod: Dropdown2.Selected.Value\n        }\n    }"
+                    "text": "{\n        _paymentScreen: {\n            SalesId: Label32_1.Text,\n            TransDate: DatePicker1.SelectedDate,\n            Amount: Value(Total_amt.Text),\n            CurrencyCodeBase: Dropdown1.Selected.Value,\n            PaymentMethod: Dropdown2.Selected.Value\n        }\n    }"
                   }
                 }
               },
@@ -182,10 +182,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 315,
+                  "charLength": 317,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "CreatePaymentHW.CreatePayment(\n    {\n        _paymentScreen: {\n            SalesId: Label32_1.Text,\n            TransDate: DatePicker1.SelectedDate,\n            Amount: Value(Label37.Text),\n            CurrencyCodeBase: Dropdown1.Selected.Value,\n            PaymentMethod: Dropdown2.Selected.Value\n        }\n    }\n)"
+                    "text": "CreatePaymentHW.CreatePayment(\n    {\n        _paymentScreen: {\n            SalesId: Label32_1.Text,\n            TransDate: DatePicker1.SelectedDate,\n            Amount: Value(Total_amt.Text),\n            CurrencyCodeBase: Dropdown1.Selected.Value,\n            PaymentMethod: Dropdown2.Selected.Value\n        }\n    }\n)"
                   }
                 }
               },
@@ -2791,19 +2791,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'New Design_Sales order Transactions'.TextInput4.AccessibleLabel"
+                  "fullyQualifiedName": "'New Design_Sales order Transactions'.Deposit.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'New Design_Sales order Transactions'.TextInput4.AccessibleLabel",
+                  "fullyQualifiedName": "'New Design_Sales order Transactions'.Deposit.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "New Design_Sales order Transactions",
-                "type": "'New Design_Sales order Transactions'.TextInput4"
+                "type": "'New Design_Sales order Transactions'.Deposit"
               }
             }
           ],
