@@ -28,6 +28,7 @@
             =Navigate('New Design_Dashboard');
             UpdateContext({Label32_1: ""});
             UpdateContext({Label32:""});
+            Clear(serialcol)
         X: =1277
         Y: =11
         ZIndex: =4
