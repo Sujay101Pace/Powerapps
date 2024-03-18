@@ -29,7 +29,9 @@
             UpdateContext({Label32_1: ""});
             UpdateContext({Label32:""});
             Clear(serialcol);
-            Reset(serialno_search)
+            Reset(serialno_search);
+            Reset(Dropdown1);
+            Reset(Dropdown2)
         X: =1277
         Y: =11
         ZIndex: =4
