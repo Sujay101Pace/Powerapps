@@ -249,6 +249,7 @@
                     }
             
              ))
+        Visible: =ShowInputBox
         Width: =40
         X: =370
         Y: =231
