@@ -55,7 +55,9 @@
 
     Label32_1 As label:
         Fill: =RGBA(237, 237, 237, 1)
-        Text: =createsoheader.SalesId
+        Text: |-
+            =(createsoheader.SalesId)+
+            Label32_1
         Width: =226
         X: =186
         Y: =143
