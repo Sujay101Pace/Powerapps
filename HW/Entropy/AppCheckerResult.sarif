@@ -2762,19 +2762,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'New Design_Payment History'.Icon5_3.AccessibleLabel"
+                  "fullyQualifiedName": "'New Design_Payment History'.Close.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'New Design_Payment History'.Icon5_3.AccessibleLabel",
+                  "fullyQualifiedName": "'New Design_Payment History'.Close.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "New Design_Payment History",
-                "type": "'New Design_Payment History'.Icon5_3"
+                "type": "'New Design_Payment History'.Close"
               }
             }
           ],
@@ -2792,19 +2792,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'New Design_Payment History'.Icon5_3.TabIndex"
+                  "fullyQualifiedName": "'New Design_Payment History'.Close.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'New Design_Payment History'.Icon5_3.TabIndex",
+                  "fullyQualifiedName": "'New Design_Payment History'.Close.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "New Design_Payment History",
-                "type": "'New Design_Payment History'.Icon5_3"
+                "type": "'New Design_Payment History'.Close"
               }
             }
           ],
