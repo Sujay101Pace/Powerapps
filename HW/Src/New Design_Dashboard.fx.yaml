@@ -98,7 +98,7 @@
             PaddingTop: =16
             Tooltip: ="View item details"
             Width: =70
-            X: =1262
+            X: =1272
             Y: =13
             ZIndex: =4
 
@@ -122,9 +122,18 @@
             Icon: =Icon.Diamond
             OnSelect: =Navigate('New Design_Sales order Transactions',ScreenTransition.None)
             Width: =50
-            X: =1126
-            Y: =27
+            X: =1140
+            Y: =23
             ZIndex: =7
+
+        Icon14 As icon.Calculator:
+            Height: =40
+            Icon: =Icon.Calculator
+            OnSelect: =Select(Parent)
+            Width: =40
+            X: =1220
+            Y: =28
+            ZIndex: =8
 
     Icon10 As icon.Person:
         Height: =55
