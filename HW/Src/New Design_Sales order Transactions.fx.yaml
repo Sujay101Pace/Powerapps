@@ -32,6 +32,7 @@
             Reset(serialno_search);
             Reset(Dropdown1);
             Reset(Dropdown2);
+            Reset(Deposit);
         X: =1277
         Y: =11
         ZIndex: =4
