@@ -122,18 +122,9 @@
             Icon: =Icon.Diamond
             OnSelect: =Navigate('New Design_Sales order Transactions',ScreenTransition.None)
             Width: =50
-            X: =1140
+            X: =1208
             Y: =23
             ZIndex: =7
-
-        Icon14 As icon.Calculator:
-            Height: =40
-            Icon: =Icon.Calculator
-            OnSelect: =Select(Parent)
-            Width: =40
-            X: =1220
-            Y: =28
-            ZIndex: =8
 
     Icon10 As icon.Person:
         Height: =55
