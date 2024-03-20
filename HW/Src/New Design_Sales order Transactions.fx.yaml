@@ -372,7 +372,7 @@
                     _paymentScreen: {
                         SalesId: Label37.Text,
                         TransDate: DatePicker1.SelectedDate,
-                        Amount: Value(Total_amt.Text),
+                        Amount: Value(Label38.Text),
                         CurrencyCodeBase: Dropdown1.Selected.Value,
                         PaymentMethod: Dropdown2.Selected.Value
                     }
