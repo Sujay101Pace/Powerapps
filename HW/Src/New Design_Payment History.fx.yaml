@@ -52,3 +52,131 @@
         Width: =173
         ZIndex: =9
 
+    Payment_History_1 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Fill: =RGBA(215, 223, 240, 1)
+        Height: =318
+        Items: =pythstr
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =80
+        Width: =1321
+        X: =21
+        Y: =356
+        ZIndex: =10
+
+        Label31_5 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.TransDate  
+            Width: =180
+            X: =50
+            Y: =12
+            ZIndex: =1
+
+        Label31_6 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.SalesId
+            Width: =180
+            X: =336
+            Y: =12
+            ZIndex: =2
+
+        Label31_7 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Amount
+            Width: =180
+            X: =591
+            Y: =12
+            ZIndex: =3
+
+        Label31_8 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.CurrencyCodeBase
+            Width: =180
+            X: =846
+            Y: =12
+            ZIndex: =4
+
+        Label31_9 As label:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.PaymentMethod
+            Width: =180
+            X: =1098
+            Y: =12
+            ZIndex: =5
+
+    Label29_5 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =38
+        Text: ="Transaction Date"
+        Width: =293
+        X: =21
+        Y: =321
+        ZIndex: =11
+
+    Label29_6 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =38
+        Text: ="SO"
+        Width: =245
+        X: =326
+        Y: =321
+        ZIndex: =12
+
+    Label29_7 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =35
+        Text: ="Amount"
+        Width: =235
+        X: =584
+        Y: =321
+        ZIndex: =13
+
+    Label29_8 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =35
+        Text: ="Currency"
+        Width: =247
+        X: =841
+        Y: =321
+        ZIndex: =14
+
+    Label29_9 As label:
+        Align: =Align.Center
+        Fill: =RGBA(219, 219, 219, 1)
+        Height: =35
+        Text: ="Payment Mode"
+        Width: =228
+        X: =1113
+        Y: =321
+        ZIndex: =15
+
+    Payment_history_btn_1 As button:
+        Color: =RGBA(56, 96, 178, 1)
+        Fill: =RGBA(238, 204, 204, 1)
+        Height: =37
+        OnSelect: |-
+            =ClearCollect(
+                pythstr,
+                PaymentHistoryHW.PaymentHistory({_paymentHistory: {SalesId: salesorderno1.Text}}).PaymentList
+            )
+        Text: ="Payment History"
+        Width: =226
+        X: =21
+        Y: =259
+        ZIndex: =16
+
