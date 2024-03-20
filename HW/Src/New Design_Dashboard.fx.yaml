@@ -122,7 +122,7 @@
             Icon: =Icon.Diamond
             OnSelect: =Navigate('New Design_Sales order Transactions',ScreenTransition.None)
             Width: =50
-            X: =1187
+            X: =1126
             Y: =27
             ZIndex: =7
 
