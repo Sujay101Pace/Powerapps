@@ -118,7 +118,7 @@
     Label29_5 As label:
         Align: =Align.Center
         Fill: =RGBA(219, 219, 219, 1)
-        Height: =38
+        Height: =35
         Text: ="Transaction Date"
         Width: =293
         X: =21
@@ -172,9 +172,9 @@
         OnSelect: |-
             =ClearCollect(
                 pythstr,
-                PaymentHistoryHW.PaymentHistory({_paymentHistory: {SalesId: salesorderno1.Text}}).PaymentList
+                PaymentHistoryHW.PaymentHistory({_paymentHistory: {SalesId: Label37.Text}}).PaymentList
             )
-        Text: ="Payment History"
+        Text: ="Get Payment History"
         Width: =226
         X: =21
         Y: =259
