@@ -18,39 +18,6 @@
         Y: =12
         ZIndex: =2
 
-    TextInput2_1 As text:
-        Clear: =true
-        Default: =""
-        Height: =54
-        HintText: ="Search by Customer name, ID, Phone, Email......."
-        OnChange: |-
-            =If(
-                Len(TextInput2_1.Text) > 2,
-                ClearCollect(
-                    colCustomers,
-                    HWConnector.searchCustomer(
-                        {
-                            _contract: {
-                                Company: "USMF",
-                                SearchText: TextInput2_1.Text
-                            }
-                        }
-                    ).CustomersList
-                )
-            )
-        Size: =15
-        Width: =531
-        X: =822
-        Y: =100
-        ZIndex: =3
-
-    Icon10_1 As icon.Person:
-        Height: =55
-        Icon: =Icon.Person
-        X: =758
-        Y: =99
-        ZIndex: =4
-
     Rectangle3_4 As rectangle:
         BorderThickness: =1
         Fill: =RGBA(227, 234, 243, 1)
