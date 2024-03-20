@@ -425,7 +425,7 @@
         ZIndex: =34
 
     Deposit As text:
-        Default: ="$0.00"
+        Default: =""
         Height: =42
         Width: =172
         X: =1105
