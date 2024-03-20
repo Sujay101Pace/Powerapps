@@ -185,7 +185,9 @@
         Fill: =RGBA(0, 0, 0, 1)
         Height: =52
         Icon: =Icon.Cancel
-        OnSelect: =Navigate('New Design_Dashboard')
+        OnSelect: |-
+            =Navigate('New Design_Dashboard');
+            Clear(pythstr)
         X: =1277
         Y: =11
         ZIndex: =17
