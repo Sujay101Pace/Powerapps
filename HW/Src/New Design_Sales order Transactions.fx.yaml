@@ -294,7 +294,7 @@
             Set(ShowInputBox, true)
         Text: ="Create Sales Order"
         Width: =217
-        X: =491
+        X: =517
         Y: =168
         ZIndex: =18
 
