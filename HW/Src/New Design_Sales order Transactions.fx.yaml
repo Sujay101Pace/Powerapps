@@ -353,7 +353,7 @@
 
     Label34_6 As label:
         Height: =43
-        Text: ="Deposit"
+        Text: ="Amount"
         Width: =109
         X: =982
         Y: =526
