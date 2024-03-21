@@ -383,8 +383,8 @@
             );
             Notify("Balance amount has been paid")
         Text: ="Pay"
-        Width: =247
-        X: =1057
+        Width: =150
+        X: =996
         Y: =725
         ZIndex: =29
 
