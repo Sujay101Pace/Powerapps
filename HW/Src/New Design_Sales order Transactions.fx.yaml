@@ -86,6 +86,7 @@
                 }
             });
             Notify("This order is on hold");
+            Navigate('New Design_Dashboard',ScreenTransition.None)
         Text: ="Hold Order"
         X: =130
         Y: =725
