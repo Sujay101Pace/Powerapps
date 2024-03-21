@@ -223,12 +223,12 @@
         Icon13 As icon.Cancel:
             Height: =40
             Icon: =Icon.Cancel
-            OnSelect: |-
+            OnSelect: |
                 =Remove(
                     serialcol,
                     ThisItem
                 );
-                DeleteSalesOrderLine.deleteline({_delete: {SalesLineDelRecId: record_id.Text}})
+                DeleteSalesOrderLine.deleteline({_delete: {SalesLineDelRecId: record_id.Text}});
             Width: =40
             X: =832
             Y: =31
@@ -291,7 +291,8 @@
                     CustAccount:cust_id.Text
                 }
             }));
-            Set(ShowInputBox, true)
+            Set(ShowInputBox, true);
+            Clear(serialcol)
         Text: ="Create Sales Order"
         Width: =217
         X: =517
