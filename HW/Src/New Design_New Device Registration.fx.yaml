@@ -43,7 +43,7 @@
         OnSelect: =Set(containerVisible, !containerVisible)
         Text: ="Click to register new device"
         Visible: |
-            =If(Container1.Visible,false)
+            =If(Container1.Visible,true)
         Width: =331
         X: =546
         Y: =108
