@@ -5,7 +5,7 @@ App As appinfo:
         Reset(txtCustomerSearch_1);
         Reset(serialnumsearch);
         //Set(varDisableButton, true);
-        Set(containerVisible,false)
+        Set(containerVisible, !containerVisible)
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
