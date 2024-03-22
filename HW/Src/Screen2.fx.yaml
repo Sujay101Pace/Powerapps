@@ -106,3 +106,16 @@ Screen2 As screen:
             Width: =4
             ZIndex: =6
 
+    Label40 As label:
+        Height: =110
+        Text: =
+        X: =40
+        Y: =170
+        ZIndex: =4
+
+    Label42 As label:
+        Text: =
+        X: =80
+        Y: =80
+        ZIndex: =6
+

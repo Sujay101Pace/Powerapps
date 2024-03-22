@@ -1,0 +1,38 @@
+"'New Design_New Device Registration' As screen":
+
+    Label10_8 As label:
+        Fill: =RGBA(26, 26, 26, 1)
+        Height: =75
+        Text: ="Text"
+        Width: =1366
+        ZIndex: =1
+
+    Label12_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =51
+        Size: =25
+        Text: ="New Device Registration"
+        Width: =430
+        X: =509
+        Y: =12
+        ZIndex: =2
+
+    Image1_8 As image:
+        Height: =75
+        Image: =image
+        Width: =173
+        ZIndex: =9
+
+    Close_1 As icon.Cancel:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =52
+        Icon: =Icon.Cancel
+        OnSelect: |-
+            =Navigate('New Design_Dashboard');
+            Clear(pythstr)
+        X: =1277
+        Y: =11
+        ZIndex: =17
+
