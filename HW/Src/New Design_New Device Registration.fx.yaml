@@ -24,18 +24,6 @@
         Width: =173
         ZIndex: =9
 
-    Close_1 As icon.Cancel:
-        Color: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(0, 0, 0, 1)
-        Height: =52
-        Icon: =Icon.Cancel
-        OnSelect: |-
-            =Navigate('New Design_Dashboard');
-            Clear(pythstr)
-        X: =1277
-        Y: =11
-        ZIndex: =17
-
     Button8 As button:
         Color: =RGBA(0, 0, 0, 1)
         Fill: =RGBA(237, 237, 119, 1)
@@ -142,4 +130,12 @@
             X: =312
             Y: =353
             ZIndex: =11
+
+    Icon14 As icon.ArrowRight:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.ArrowRight
+        OnSelect: =Navigate('New Design_Dashboard',ScreenTransition.None)
+        X: =1302
+        Y: =5
+        ZIndex: =20
 

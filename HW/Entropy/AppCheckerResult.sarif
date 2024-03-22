@@ -2822,49 +2822,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'New Design_New Device Registration'.Close_1.AccessibleLabel"
+                  "fullyQualifiedName": "'New Design_New Device Registration'.Icon14.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'New Design_New Device Registration'.Close_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "New Design_New Device Registration",
-                "type": "'New Design_New Device Registration'.Close_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'New Design_New Device Registration'.Close_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'New Design_New Device Registration'.Close_1.TabIndex",
+                  "fullyQualifiedName": "'New Design_New Device Registration'.Icon14.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "New Design_New Device Registration",
-                "type": "'New Design_New Device Registration'.Close_1"
+                "type": "'New Design_New Device Registration'.Icon14"
               }
             }
           ],
@@ -2876,6 +2846,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'New Design_New Device Registration'.Icon14.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Design_New Device Registration'.Icon14.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Design_New Device Registration",
+                "type": "'New Design_New Device Registration'.Icon14"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
         },
         {
           "locations": [
