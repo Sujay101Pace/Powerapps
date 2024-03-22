@@ -116,7 +116,8 @@
             Fill: =RGBA(232, 232, 86, 1)
             OnSelect: |-
                 =Navigate('New Design_Dashboard');
-                Set(containerVisible,false)
+                Set(containerVisible,false);
+                Set(IsVoted,true)
             Text: ="Register Device"
             X: =618
             Y: =555
