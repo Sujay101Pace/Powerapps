@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =true
-    OnStart: |-
+    OnStart: |
         =Clear(coladdline);
         Reset(txtCustomerSearch_1);
         Reset(serialnumsearch);
