@@ -117,7 +117,7 @@
             OnSelect: |-
                 =Navigate('New Design_Dashboard');
                 Set(containerVisible,false);
-                Set(IsVoted,true)
+                Select(Button8)
             Text: ="Register Device"
             X: =618
             Y: =555
