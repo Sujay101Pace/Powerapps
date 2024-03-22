@@ -36,12 +36,13 @@
         Y: =11
         ZIndex: =17
 
-    Label43 As label:
-        Align: =Align.Center
-        Height: =56
-        Text: ="Click to Register new device"
-        Width: =321
-        X: =522
+    Button8 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(237, 237, 119, 1)
+        Height: =41
+        Text: ="Click to register new device"
+        Width: =331
+        X: =546
         Y: =108
         ZIndex: =18
 
