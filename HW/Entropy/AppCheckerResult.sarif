@@ -3002,6 +3002,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'New Design_New Device Registration'.Container1.Dropdown3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'New Design_New Device Registration'.Container1.Dropdown3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "New Design_New Device Registration",
+                "type": "'New Design_New Device Registration'.Container1.Dropdown3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'More Customer Details'.ShowCustDetails.Items"
                 }
               ],

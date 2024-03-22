@@ -125,3 +125,16 @@
             Y: =555
             ZIndex: =9
 
+        Label49 As label:
+            Size: =15
+            Text: ="Entity"
+            X: =40
+            Y: =353
+            ZIndex: =10
+
+        Dropdown3 As dropdown:
+            Items: =["USA","UK","JPY","EUR","RUS"]
+            X: =312
+            Y: =353
+            ZIndex: =11
+
