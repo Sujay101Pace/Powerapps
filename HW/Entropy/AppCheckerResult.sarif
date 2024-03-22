@@ -3122,6 +3122,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.IsVoted"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.IsVoted",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "IsVoted",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'More Customer Details'.ShowCustDetails.Items"
                 }
               ],
