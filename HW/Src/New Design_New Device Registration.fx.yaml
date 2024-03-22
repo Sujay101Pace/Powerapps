@@ -36,3 +36,12 @@
         Y: =11
         ZIndex: =17
 
+    Label43 As label:
+        Align: =Align.Center
+        Height: =56
+        Text: ="Click to Register new device"
+        Width: =321
+        X: =522
+        Y: =108
+        ZIndex: =18
+
