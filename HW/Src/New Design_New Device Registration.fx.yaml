@@ -14,7 +14,7 @@
         Size: =25
         Text: ="New Device Registration"
         Width: =430
-        X: =509
+        X: =496
         Y: =12
         ZIndex: =2
 
@@ -45,4 +45,77 @@
         X: =546
         Y: =108
         ZIndex: =18
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Height: =609
+        Width: =1366
+        Y: =159
+        ZIndex: =19
+
+        TextInput4 As text:
+            Default: =Host.BrowserUserAgent
+            Width: =1023
+            X: =312
+            Y: =39
+            ZIndex: =1
+
+        Label44 As label:
+            Height: =39
+            Size: =16
+            Text: ="Browser User Agent"
+            Width: =223
+            X: =40
+            Y: =40
+            ZIndex: =2
+
+        Label45 As label:
+            Size: =16
+            Text: ="Operating System"
+            Width: =208
+            X: =40
+            Y: =116
+            ZIndex: =3
+
+        TextInput5 As text:
+            Default: =Host.OSType
+            Width: =1023
+            X: =312
+            Y: =116
+            ZIndex: =4
+
+        Label46 As label:
+            Size: =15
+            Text: ="Session ID"
+            X: =40
+            Y: =201
+            ZIndex: =5
+
+        TextInput6 As text:
+            Default: =Host.SessionID
+            Width: =1023
+            X: =312
+            Y: =201
+            ZIndex: =6
+
+        Label47 As label:
+            Size: =15
+            Text: ="Tenant ID"
+            X: =40
+            Y: =278
+            ZIndex: =7
+
+        TextInput7 As text:
+            Default: =Host.TenantID
+            Width: =1023
+            X: =312
+            Y: =278
+            ZIndex: =8
+
+        Button9 As button:
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(232, 232, 86, 1)
+            Text: ="Register Device"
+            X: =618
+            Y: =555
+            ZIndex: =9
 
