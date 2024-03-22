@@ -121,7 +121,9 @@
         Button9 As button:
             Color: =RGBA(0, 0, 0, 1)
             Fill: =RGBA(232, 232, 86, 1)
-            OnSelect: =Navigate('New Design_Dashboard');
+            OnSelect: |-
+                =Navigate('New Design_Dashboard');
+                Set(containerVisible,false)
             Text: ="Register Device"
             X: =618
             Y: =555
