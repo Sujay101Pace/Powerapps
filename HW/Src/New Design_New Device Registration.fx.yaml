@@ -1,4 +1,5 @@
 "'New Design_New Device Registration' As screen":
+    OnVisible: =Set(varDisableButton, true)
 
     Label10_8 As label:
         Fill: =RGBA(26, 26, 26, 1)
@@ -26,10 +27,12 @@
 
     Button8 As button:
         Color: =RGBA(0, 0, 0, 1)
-        DisplayMode: |-
+        DisplayMode: |+
             =//If(IsVoted,DisplayMode.Edit,DisplayMode.Disabled)
             //If(Self.Pressed,DisplayMode.Disabled)
-            DisplayMode.Edit
+            //DisplayMode.Edit
+            If(varDisableButton=false, DisplayMode.Disabled, DisplayMode.Edit)
+            
         Fill: =RGBA(237, 237, 119, 1)
         Height: =41
         OnSelect: |+
@@ -38,7 +41,8 @@
                 isButtonEnabled,
                 Set(isButtonEnabled, false)
             );*/
-            Set(IsVoted,true)
+            //Set(IsVoted,true)
+            Set(varDisableButton, false)
             
         Text: ="Click to register new device"
         Width: =331
