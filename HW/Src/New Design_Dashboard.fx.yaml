@@ -167,3 +167,13 @@
         Width: =173
         ZIndex: =12
 
+    Icon5_3 As icon.Cancel:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =52
+        Icon: =Icon.Cancel
+        OnSelect: =Navigate('New Design_Dashboard')
+        X: =1277
+        Y: =11
+        ZIndex: =13
+
