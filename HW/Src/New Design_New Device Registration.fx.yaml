@@ -133,6 +133,7 @@
             ZIndex: =10
 
         Dropdown3 As dropdown:
+            Default: ="USA"
             Items: =["USA","UK","JPY","EUR","RUS"]
             X: =312
             Y: =353
