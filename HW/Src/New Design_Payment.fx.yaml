@@ -13,19 +13,19 @@
             Y: =297
             ZIndex: =1
 
-            "'pay yes' As button":
-                OnSelect: |-
-                    =UpdateContext({showpopup:false})
-                Text: ="Yes"
-                X: =285
-                Y: =147
-                ZIndex: =1
-
             "'pay no' As button":
                 OnSelect: |-
                     =UpdateContext({showpopup:false})
                 Text: ="No"
                 X: =33
+                Y: =147
+                ZIndex: =1
+
+            "'pay yes' As button":
+                OnSelect: |-
+                    =UpdateContext({showpopup:false})
+                Text: ="Yes"
+                X: =285
                 Y: =147
                 ZIndex: =2
 
