@@ -7,37 +7,12 @@
         Y: =199
         ZIndex: =1
 
-    Deposit_1 As text:
-        Default: =""
-        Height: =42
+    DatePicker1_1 As datepicker:
+        Height: =43
         Width: =172
         X: =720
-        Y: =284
-        ZIndex: =2
-
-    Label34_15 As label:
-        Height: =43
-        Text: ="Transaction Date"
-        Width: =109
-        X: =541
         Y: =438
-        ZIndex: =3
-
-    Label34_13 As label:
-        Height: =43
-        Text: ="Amount"
-        Width: =109
-        X: =541
-        Y: =289
-        ZIndex: =4
-
-    Label34_14 As label:
-        Height: =43
-        Text: ="Balance Amount"
-        Width: =109
-        X: =541
-        Y: =355
-        ZIndex: =5
+        ZIndex: =2
 
     Label38_1 As label:
         Height: =35
@@ -46,21 +21,23 @@
         Width: =172
         X: =720
         Y: =362
-        ZIndex: =6
+        ZIndex: =3
 
-    DatePicker1_1 As datepicker:
-        Height: =43
+    Deposit_1 As text:
+        Default: =""
+        Height: =42
         Width: =172
         X: =720
-        Y: =438
-        ZIndex: =7
+        Y: =284
+        ZIndex: =4
 
-    Total_amt_1 As label:
-        Text: |-
-            =//Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
-        X: =257
-        Y: =286
-        ZIndex: =8
+    Label34_13 As label:
+        Height: =43
+        Text: ="Amount"
+        Width: =109
+        X: =541
+        Y: =289
+        ZIndex: =5
 
     Dropdown2_1 As dropdown:
         Height: =41
@@ -68,7 +45,7 @@
         Width: =172
         X: =260
         Y: =438
-        ZIndex: =9
+        ZIndex: =6
 
     Dropdown1_1 As dropdown:
         Default: ="Select here"
@@ -77,14 +54,30 @@
         Width: =172
         X: =260
         Y: =356
-        ZIndex: =10
+        ZIndex: =7
+
+    Label34_15 As label:
+        Height: =43
+        Text: ="Transaction Date"
+        Width: =109
+        X: =541
+        Y: =438
+        ZIndex: =8
+
+    Label34_14 As label:
+        Height: =43
+        Text: ="Balance Amount"
+        Width: =109
+        X: =541
+        Y: =355
+        ZIndex: =9
 
     Container2 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(169, 169, 169, 0.75)
         Height: =768
         Visible: =showpopup
         Width: =1366
-        ZIndex: =11
+        ZIndex: =10
 
         Container3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(215, 223, 240, 1)
@@ -132,12 +125,64 @@
                 Y: =33
                 ZIndex: =3
 
+    Label30_3 As label:
+        Text: |-
+            ="Sales order no:"
+        X: =24
+        Y: =143
+        ZIndex: =11
+
+    Label34_12 As label:
+        Height: =43
+        Text: ="Total-After Tax"
+        Width: =109
+        X: =44
+        Y: =592
+        ZIndex: =12
+
+    Label34_11 As label:
+        Height: =52
+        Text: ="Tax"
+        Width: =109
+        X: =44
+        Y: =522
+        ZIndex: =13
+
+    Label34_10 As label:
+        Height: =52
+        Text: ="Payment Method"
+        Width: =109
+        X: =44
+        Y: =427
+        ZIndex: =14
+
+    Label34_9 As label:
+        Height: =44
+        Text: ="Currency"
+        Width: =91
+        X: =41
+        Y: =356
+        ZIndex: =15
+
+    Label34_1 As label:
+        Text: ="Total"
+        X: =41
+        Y: =286
+        ZIndex: =16
+
+    Total_amt_1 As label:
+        Text: |-
+            =//Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
+        X: =257
+        Y: =286
+        ZIndex: =17
+
     Label10_9 As label:
         Fill: =RGBA(26, 26, 26, 1)
         Height: =75
         Text: ="Text"
         Width: =1366
-        ZIndex: =12
+        ZIndex: =18
 
     Label12_5 As label:
         Align: =Align.Center
@@ -148,7 +193,7 @@
         Width: =467
         X: =491
         Y: =11
-        ZIndex: =13
+        ZIndex: =19
 
     Icon5_4 As icon.Cancel:
         Color: =RGBA(255, 255, 255, 1)
@@ -166,14 +211,14 @@
             Reset(Deposit_1);*/
         X: =1277
         Y: =11
-        ZIndex: =14
+        ZIndex: =20
 
     Label30_2 As label:
         Text: |-
             ="Customer name:"
         X: =24
         Y: =92
-        ZIndex: =15
+        ZIndex: =21
 
     Label32_2 As label:
         Fill: =RGBA(237, 237, 237, 1)
@@ -181,14 +226,7 @@
         Width: =226
         X: =186
         Y: =92
-        ZIndex: =16
-
-    Label30_3 As label:
-        Text: |-
-            ="Sales order no:"
-        X: =24
-        Y: =143
-        ZIndex: =17
+        ZIndex: =22
 
     Label32_3 As label:
         Fill: =RGBA(237, 237, 237, 1)
@@ -197,7 +235,7 @@
         Width: =226
         X: =186
         Y: =143
-        ZIndex: =18
+        ZIndex: =23
 
     cust_id_1 As label:
         Fill: =RGBA(237, 237, 237, 1)
@@ -206,7 +244,7 @@
         Width: =226
         X: =436
         Y: =92
-        ZIndex: =19
+        ZIndex: =24
 
     serialno_search_1 As text:
         Clear: =true
@@ -215,7 +253,7 @@
         Visible: =ShowInputBox
         X: =37
         Y: =231
-        ZIndex: =20
+        ZIndex: =25
 
     Icon12_1 As icon.Add:
         Height: =40
@@ -235,44 +273,6 @@
         Width: =40
         X: =370
         Y: =231
-        ZIndex: =21
-
-    Label34_1 As label:
-        Text: ="Total"
-        X: =41
-        Y: =286
-        ZIndex: =22
-
-    Label34_9 As label:
-        Height: =44
-        Text: ="Currency"
-        Width: =91
-        X: =41
-        Y: =356
-        ZIndex: =23
-
-    Label34_10 As label:
-        Height: =52
-        Text: ="Payment Method"
-        Width: =109
-        X: =44
-        Y: =427
-        ZIndex: =24
-
-    Label34_11 As label:
-        Height: =52
-        Text: ="Tax"
-        Width: =109
-        X: =44
-        Y: =522
-        ZIndex: =25
-
-    Label34_12 As label:
-        Height: =43
-        Text: ="Total-After Tax"
-        Width: =109
-        X: =44
-        Y: =592
         ZIndex: =26
 
     pay_btn_1 As button:
