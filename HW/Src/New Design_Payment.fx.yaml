@@ -1,19 +1,97 @@
 "'New Design_Payment' As screen":
     OnVisible: =Set(ShowInputBox,false)
 
+    Label33_1 As label:
+        Text: ="Order Details"
+        X: =610
+        Y: =199
+        ZIndex: =1
+
+    Deposit_1 As text:
+        Default: =""
+        Height: =42
+        Width: =172
+        X: =720
+        Y: =284
+        ZIndex: =2
+
+    Label34_15 As label:
+        Height: =43
+        Text: ="Transaction Date"
+        Width: =109
+        X: =541
+        Y: =438
+        ZIndex: =3
+
+    Label34_13 As label:
+        Height: =43
+        Text: ="Amount"
+        Width: =109
+        X: =541
+        Y: =289
+        ZIndex: =4
+
+    Label34_14 As label:
+        Height: =43
+        Text: ="Balance Amount"
+        Width: =109
+        X: =541
+        Y: =355
+        ZIndex: =5
+
+    Label38_1 As label:
+        Height: =35
+        Text: |-
+            =Text(Value(Total_amt_1.Text)-Value(Deposit_1.Text),"[$-en-us]$#,###")
+        Width: =172
+        X: =720
+        Y: =362
+        ZIndex: =6
+
+    DatePicker1_1 As datepicker:
+        Height: =43
+        Width: =172
+        X: =720
+        Y: =438
+        ZIndex: =7
+
+    Total_amt_1 As label:
+        Text: |-
+            =Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
+        X: =257
+        Y: =286
+        ZIndex: =8
+
+    Dropdown2_1 As dropdown:
+        Height: =41
+        Items: =["Select here","Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
+        Width: =172
+        X: =260
+        Y: =438
+        ZIndex: =9
+
+    Dropdown1_1 As dropdown:
+        Default: ="Select here"
+        Height: =38
+        Items: =["Select here","USD","EUR","AUD","JPY","AED","CNY"]
+        Width: =172
+        X: =260
+        Y: =356
+        ZIndex: =10
+
     Container2 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(169, 169, 169, 0.75)
         Height: =768
         Visible: =showpopup
         Width: =1366
-        ZIndex: =1
+        ZIndex: =11
 
         Container3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 191, 0, 1)
             Height: =436
             Width: =1088
-            X: =144
-            Y: =156
+            X: =180
+            Y: =201
             ZIndex: =1
 
             "'pay no' As button":
@@ -37,7 +115,7 @@
         Height: =75
         Text: ="Text"
         Width: =1366
-        ZIndex: =2
+        ZIndex: =12
 
     Label12_5 As label:
         Align: =Align.Center
@@ -48,7 +126,7 @@
         Width: =467
         X: =491
         Y: =11
-        ZIndex: =3
+        ZIndex: =13
 
     Icon5_4 As icon.Cancel:
         Color: =RGBA(255, 255, 255, 1)
@@ -66,14 +144,14 @@
             Reset(Deposit_1);*/
         X: =1277
         Y: =11
-        ZIndex: =4
+        ZIndex: =14
 
     Label30_2 As label:
         Text: |-
             ="Customer name:"
         X: =24
         Y: =92
-        ZIndex: =5
+        ZIndex: =15
 
     Label32_2 As label:
         Fill: =RGBA(237, 237, 237, 1)
@@ -81,14 +159,14 @@
         Width: =226
         X: =186
         Y: =92
-        ZIndex: =6
+        ZIndex: =16
 
     Label30_3 As label:
         Text: |-
             ="Sales order no:"
         X: =24
         Y: =143
-        ZIndex: =7
+        ZIndex: =17
 
     Label32_3 As label:
         Fill: =RGBA(237, 237, 237, 1)
@@ -97,7 +175,7 @@
         Width: =226
         X: =186
         Y: =143
-        ZIndex: =8
+        ZIndex: =18
 
     cust_id_1 As label:
         Fill: =RGBA(237, 237, 237, 1)
@@ -106,7 +184,7 @@
         Width: =226
         X: =436
         Y: =92
-        ZIndex: =9
+        ZIndex: =19
 
     serialno_search_1 As text:
         Clear: =true
@@ -115,7 +193,7 @@
         Visible: =ShowInputBox
         X: =37
         Y: =231
-        ZIndex: =10
+        ZIndex: =20
 
     Icon12_1 As icon.Add:
         Height: =40
@@ -135,26 +213,13 @@
         Width: =40
         X: =370
         Y: =231
-        ZIndex: =11
-
-    Label33_1 As label:
-        Text: ="Order Details"
-        X: =610
-        Y: =199
-        ZIndex: =12
+        ZIndex: =21
 
     Label34_1 As label:
         Text: ="Total"
         X: =41
         Y: =286
-        ZIndex: =13
-
-    Total_amt_1 As label:
-        Text: |-
-            =Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
-        X: =257
-        Y: =286
-        ZIndex: =14
+        ZIndex: =22
 
     Label34_9 As label:
         Height: =44
@@ -162,7 +227,7 @@
         Width: =91
         X: =41
         Y: =356
-        ZIndex: =15
+        ZIndex: =23
 
     Label34_10 As label:
         Height: =52
@@ -170,7 +235,7 @@
         Width: =109
         X: =44
         Y: =427
-        ZIndex: =16
+        ZIndex: =24
 
     Label34_11 As label:
         Height: =52
@@ -178,7 +243,7 @@
         Width: =109
         X: =44
         Y: =522
-        ZIndex: =17
+        ZIndex: =25
 
     Label34_12 As label:
         Height: =43
@@ -186,23 +251,7 @@
         Width: =109
         X: =44
         Y: =592
-        ZIndex: =18
-
-    Label34_13 As label:
-        Height: =43
-        Text: ="Amount"
-        Width: =109
-        X: =541
-        Y: =289
-        ZIndex: =19
-
-    Label34_14 As label:
-        Height: =43
-        Text: ="Balance Amount"
-        Width: =109
-        X: =541
-        Y: =355
-        ZIndex: =20
+        ZIndex: =26
 
     pay_btn_1 As button:
         Fill: =RGBA(0, 0, 0, 1)
@@ -224,62 +273,13 @@
         Width: =150
         X: =629
         Y: =695
-        ZIndex: =21
+        ZIndex: =27
 
     Label37_3 As label:
         Text: =""
         Visible: =//Sum(transaction.AllItems,Price)
         X: =658
         Y: =303
-        ZIndex: =22
-
-    Label34_15 As label:
-        Height: =43
-        Text: ="Transaction Date"
-        Width: =109
-        X: =541
-        Y: =438
-        ZIndex: =23
-
-    DatePicker1_1 As datepicker:
-        Height: =43
-        Width: =172
-        X: =720
-        Y: =438
-        ZIndex: =24
-
-    Dropdown1_1 As dropdown:
-        Default: ="Select here"
-        Height: =38
-        Items: =["Select here","USD","EUR","AUD","JPY","AED","CNY"]
-        Width: =172
-        X: =260
-        Y: =356
-        ZIndex: =25
-
-    Dropdown2_1 As dropdown:
-        Height: =41
-        Items: =["Select here","Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
-        Width: =172
-        X: =260
-        Y: =438
-        ZIndex: =26
-
-    Deposit_1 As text:
-        Default: =""
-        Height: =42
-        Width: =172
-        X: =720
-        Y: =284
-        ZIndex: =27
-
-    Label38_1 As label:
-        Height: =35
-        Text: |-
-            =Text(Value(Total_amt_1.Text)-Value(Deposit_1.Text),"[$-en-us]$#,###")
-        Width: =172
-        X: =720
-        Y: =362
         ZIndex: =28
 
     Label37_2 As label:
