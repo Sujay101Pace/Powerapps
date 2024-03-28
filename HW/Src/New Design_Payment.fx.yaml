@@ -1,12 +1,36 @@
 "'New Design_Payment' As screen":
     OnVisible: =Set(ShowInputBox,false)
 
+    Container2 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(169, 169, 169, 0.75)
+        Height: =768
+        Visible: =showpopup
+        Width: =1366
+        ZIndex: =1
+
+        Container3 As groupContainer.manualLayoutContainer:
+            X: =438
+            Y: =297
+            ZIndex: =1
+
+            "'pay yes' As button":
+                Text: ="Button"
+                X: =285
+                Y: =147
+                ZIndex: =1
+
+            "'pay no' As button":
+                Text: ="Button"
+                X: =33
+                Y: =147
+                ZIndex: =2
+
     Label10_9 As label:
         Fill: =RGBA(26, 26, 26, 1)
         Height: =75
         Text: ="Text"
         Width: =1366
-        ZIndex: =1
+        ZIndex: =2
 
     Label12_5 As label:
         Align: =Align.Center
@@ -84,7 +108,7 @@
         Visible: =ShowInputBox
         X: =37
         Y: =231
-        ZIndex: =13
+        ZIndex: =10
 
     Icon12_1 As icon.Add:
         Height: =40
@@ -104,26 +128,26 @@
         Width: =40
         X: =370
         Y: =231
-        ZIndex: =16
+        ZIndex: =11
 
     Label33_1 As label:
         Text: ="Order Details"
         X: =610
         Y: =199
-        ZIndex: =19
+        ZIndex: =12
 
     Label34_1 As label:
         Text: ="Total"
         X: =41
         Y: =286
-        ZIndex: =20
+        ZIndex: =13
 
     Total_amt_1 As label:
         Text: |-
             =Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
         X: =257
         Y: =286
-        ZIndex: =21
+        ZIndex: =14
 
     Label34_9 As label:
         Height: =44
@@ -131,7 +155,7 @@
         Width: =91
         X: =41
         Y: =356
-        ZIndex: =23
+        ZIndex: =15
 
     Label34_10 As label:
         Height: =52
@@ -139,7 +163,7 @@
         Width: =109
         X: =44
         Y: =427
-        ZIndex: =24
+        ZIndex: =16
 
     Label34_11 As label:
         Height: =52
@@ -147,7 +171,7 @@
         Width: =109
         X: =44
         Y: =522
-        ZIndex: =25
+        ZIndex: =17
 
     Label34_12 As label:
         Height: =43
@@ -155,7 +179,7 @@
         Width: =109
         X: =44
         Y: =592
-        ZIndex: =26
+        ZIndex: =18
 
     Label34_13 As label:
         Height: =43
@@ -163,7 +187,7 @@
         Width: =109
         X: =541
         Y: =289
-        ZIndex: =27
+        ZIndex: =19
 
     Label34_14 As label:
         Height: =43
@@ -171,12 +195,12 @@
         Width: =109
         X: =541
         Y: =355
-        ZIndex: =28
+        ZIndex: =20
 
     pay_btn_1 As button:
         Fill: =RGBA(0, 0, 0, 1)
         OnSelect: |-
-            =CreatePaymentHW.CreatePayment(
+            =/*CreatePaymentHW.CreatePayment(
                 {
                     _paymentScreen: {
                         SalesId: Label37_2.Text,
@@ -186,20 +210,21 @@
                         PaymentMethod: Dropdown2_1.Selected.Value
                     }
                 }
-            );
-            Notify("Balance amount has been paid")
+            );*/
+            UpdateContext({showpopup:true});
+            /*Notify("Balance amount has been paid")*/
         Text: ="Pay"
         Width: =150
         X: =629
         Y: =695
-        ZIndex: =29
+        ZIndex: =21
 
     Label37_3 As label:
         Text: =""
         Visible: =//Sum(transaction.AllItems,Price)
         X: =658
         Y: =303
-        ZIndex: =30
+        ZIndex: =22
 
     Label34_15 As label:
         Height: =43
@@ -207,14 +232,14 @@
         Width: =109
         X: =541
         Y: =438
-        ZIndex: =31
+        ZIndex: =23
 
     DatePicker1_1 As datepicker:
         Height: =43
         Width: =172
         X: =720
         Y: =438
-        ZIndex: =32
+        ZIndex: =24
 
     Dropdown1_1 As dropdown:
         Default: ="Select here"
@@ -223,7 +248,7 @@
         Width: =172
         X: =260
         Y: =356
-        ZIndex: =33
+        ZIndex: =25
 
     Dropdown2_1 As dropdown:
         Height: =41
@@ -231,7 +256,7 @@
         Width: =172
         X: =260
         Y: =438
-        ZIndex: =34
+        ZIndex: =26
 
     Deposit_1 As text:
         Default: =""
@@ -239,7 +264,7 @@
         Width: =172
         X: =720
         Y: =284
-        ZIndex: =35
+        ZIndex: =27
 
     Label38_1 As label:
         Height: =35
@@ -248,18 +273,18 @@
         Width: =172
         X: =720
         Y: =362
-        ZIndex: =36
+        ZIndex: =28
 
     Label37_2 As label:
         Text: =createsoheader.SalesId
         Visible: =false
         X: =784
         Y: =159
-        ZIndex: =37
+        ZIndex: =29
 
     Image1_9 As image:
         Height: =75
         Image: =image
         Width: =173
-        ZIndex: =38
+        ZIndex: =30
 
