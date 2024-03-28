@@ -14,13 +14,13 @@
             ZIndex: =1
 
             "'pay yes' As button":
-                Text: ="Button"
+                Text: ="Yes"
                 X: =285
                 Y: =147
                 ZIndex: =1
 
             "'pay no' As button":
-                Text: ="Button"
+                Text: ="No"
                 X: =33
                 Y: =147
                 ZIndex: =2
