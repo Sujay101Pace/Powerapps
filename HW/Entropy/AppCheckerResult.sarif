@@ -3789,66 +3789,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'New Design_Payment'.Label32"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'New Design_Payment'.Label32",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Label32",
-                "module": "New Design_Payment",
-                "type": "'New Design_Payment'"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'New Design_Payment'.Label32_1"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'New Design_Payment'.Label32_1",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Label32_1",
-                "module": "New Design_Payment",
-                "type": "'New Design_Payment'"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'New Design_Payment'.Label32_2.Text"
                 }
               ],

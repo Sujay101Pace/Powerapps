@@ -25,14 +25,14 @@
         Height: =52
         Icon: =Icon.Cancel
         OnSelect: |-
-            =Navigate('New Design_Dashboard');
-            UpdateContext({Label32_1: ""});
+            =Navigate('New Design_Sales order Transactions');
+            /*UpdateContext({Label32_1: ""});
             UpdateContext({Label32:""});
             Clear(serialcol);
             Reset(serialno_search_1);
             Reset(Dropdown1_1);
             Reset(Dropdown2_1);
-            Reset(Deposit_1);
+            Reset(Deposit_1);*/
         X: =1277
         Y: =11
         ZIndex: =4
@@ -161,7 +161,7 @@
         Height: =43
         Text: ="Amount"
         Width: =109
-        X: =553
+        X: =541
         Y: =289
         ZIndex: =27
 
@@ -169,7 +169,7 @@
         Height: =43
         Text: ="Balance Amount"
         Width: =109
-        X: =549
+        X: =541
         Y: =355
         ZIndex: =28
 
