@@ -118,8 +118,8 @@
                     Notify("Balance amount has been paid");
                     UpdateContext({showpopup:false})
                 Text: ="Yes"
-                X: =651
-                Y: =249
+                X: =652
+                Y: =237
                 ZIndex: =2
 
             Label39 As label:
