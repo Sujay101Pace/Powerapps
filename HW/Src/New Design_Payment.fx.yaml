@@ -22,6 +22,8 @@
                 ZIndex: =1
 
             "'pay no' As button":
+                OnSelect: |-
+                    =UpdateContext({showpopup:false})
                 Text: ="No"
                 X: =33
                 Y: =147
