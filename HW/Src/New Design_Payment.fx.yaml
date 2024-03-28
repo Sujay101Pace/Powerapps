@@ -57,7 +57,7 @@
 
     Total_amt_1 As label:
         Text: |-
-            =Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
+            =//Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
         X: =257
         Y: =286
         ZIndex: =8
