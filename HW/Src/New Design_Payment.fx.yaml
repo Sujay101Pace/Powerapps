@@ -88,9 +88,9 @@
 
         Container3 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(215, 223, 240, 1)
-            Height: =436
-            Width: =1088
-            X: =180
+            Height: =350
+            Width: =1140
+            X: =174
             Y: =201
             ZIndex: =1
 
@@ -98,8 +98,8 @@
                 OnSelect: |-
                     =UpdateContext({showpopup:false});
                 Text: ="No"
-                X: =201
-                Y: =378
+                X: =259
+                Y: =237
                 ZIndex: =1
 
             "'pay yes' As button":
@@ -118,9 +118,19 @@
                     Notify("Balance amount has been paid");
                     UpdateContext({showpopup:false})
                 Text: ="Yes"
-                X: =786
-                Y: =378
+                X: =651
+                Y: =249
                 ZIndex: =2
+
+            Label39 As label:
+                Align: =Align.Center
+                Height: =58
+                Size: =30
+                Text: ="Do you want to make the payment now?"
+                Width: =1041
+                X: =18
+                Y: =33
+                ZIndex: =3
 
     Label10_9 As label:
         Fill: =RGBA(26, 26, 26, 1)
