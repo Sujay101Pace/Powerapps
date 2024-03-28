@@ -114,63 +114,63 @@
 
     Label34_1 As label:
         Text: ="Total"
-        X: =535
-        Y: =263
+        X: =41
+        Y: =286
         ZIndex: =20
 
     Total_amt_1 As label:
         Text: |-
             =Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
-        X: =653
-        Y: =260
+        X: =257
+        Y: =286
         ZIndex: =21
 
     Label34_9 As label:
         Height: =44
         Text: ="Currency"
         Width: =91
-        X: =535
-        Y: =303
+        X: =41
+        Y: =356
         ZIndex: =23
 
     Label34_10 As label:
         Height: =52
         Text: ="Payment Method"
         Width: =109
-        X: =535
-        Y: =347
+        X: =44
+        Y: =427
         ZIndex: =24
 
     Label34_11 As label:
         Height: =52
         Text: ="Tax"
         Width: =109
-        X: =535
-        Y: =397
+        X: =44
+        Y: =522
         ZIndex: =25
 
     Label34_12 As label:
         Height: =43
         Text: ="Total-After Tax"
         Width: =109
-        X: =535
-        Y: =449
+        X: =44
+        Y: =592
         ZIndex: =26
 
     Label34_13 As label:
         Height: =43
         Text: ="Amount"
         Width: =109
-        X: =535
-        Y: =506
+        X: =553
+        Y: =289
         ZIndex: =27
 
     Label34_14 As label:
         Height: =43
         Text: ="Balance Amount"
         Width: =109
-        X: =535
-        Y: =549
+        X: =549
+        Y: =355
         ZIndex: =28
 
     pay_btn_1 As button:
@@ -190,8 +190,8 @@
             Notify("Balance amount has been paid")
         Text: ="Pay"
         Width: =150
-        X: =549
-        Y: =705
+        X: =629
+        Y: =695
         ZIndex: =29
 
     Label37_3 As label:
@@ -205,15 +205,15 @@
         Height: =43
         Text: ="Transaction Date"
         Width: =109
-        X: =535
-        Y: =605
+        X: =541
+        Y: =438
         ZIndex: =31
 
     DatePicker1_1 As datepicker:
         Height: =43
         Width: =172
-        X: =658
-        Y: =605
+        X: =720
+        Y: =438
         ZIndex: =32
 
     Dropdown1_1 As dropdown:
@@ -221,24 +221,24 @@
         Height: =38
         Items: =["Select here","USD","EUR","AUD","JPY","AED","CNY"]
         Width: =172
-        X: =658
-        Y: =305
+        X: =260
+        Y: =356
         ZIndex: =33
 
     Dropdown2_1 As dropdown:
         Height: =41
         Items: =["Select here","Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
         Width: =172
-        X: =658
-        Y: =356
+        X: =260
+        Y: =438
         ZIndex: =34
 
     Deposit_1 As text:
         Default: =""
         Height: =42
         Width: =172
-        X: =658
-        Y: =507
+        X: =720
+        Y: =284
         ZIndex: =35
 
     Label38_1 As label:
@@ -246,8 +246,8 @@
         Text: |-
             =Text(Value(Total_amt_1.Text)-Value(Deposit_1.Text),"[$-en-us]$#,###")
         Width: =172
-        X: =658
-        Y: =557
+        X: =720
+        Y: =362
         ZIndex: =36
 
     Label37_2 As label:
