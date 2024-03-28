@@ -5,7 +5,7 @@
       "DataflowAnalysisEnabled": false,
       "DataflowAnalysisFlagStateToggledByUser": false
     },
-    "DocVersion": "1.338",
+    "DocVersion": "1.337",
     "MinVersionToLoad": "1.331",
     "MSAppStructureVersion": "2.0"
   },
@@ -29,7 +29,6 @@
       "dataverseactionsenabled": true,
       "delaycontrolrendering": true,
       "delayloadscreens": true,
-      "disablebehaviorreturntypecheck": false,
       "disablecdsfileandlargeimage": false,
       "disableruntimepolicies": false,
       "dynamicschema": false,
@@ -43,7 +42,9 @@
       "enableeditcacherefreshfrequency": false,
       "enableeditinmcs": false,
       "enableexcelonlinebusinessv2connector": true,
+      "enableexperimentaldataverseoffline": false,
       "enableideaspanel": true,
+      "enablelargefilesindataverseoffline": false,
       "enablelegacybarcodescanner": false,
       "enableonstart": true,
       "enableonstartnavigate": false,
@@ -101,7 +102,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 2,
+    "BindingErrorCount": 6,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -144,6 +145,7 @@
     "New Design_Dashboard",
     "New Design_More Customer Details",
     "New Design_Sales order Transactions",
+    "New Design_Payment",
     "New Design_Payment History"
   ]
 }

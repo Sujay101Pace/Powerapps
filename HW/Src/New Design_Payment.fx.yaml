@@ -1,0 +1,265 @@
+"'New Design_Payment' As screen":
+    OnVisible: =Set(ShowInputBox,false)
+
+    Label10_9 As label:
+        Fill: =RGBA(26, 26, 26, 1)
+        Height: =75
+        Text: ="Text"
+        Width: =1366
+        ZIndex: =1
+
+    Label12_5 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =58
+        Size: =20
+        Text: ="Sales Order Transactions"
+        Width: =467
+        X: =491
+        Y: =11
+        ZIndex: =3
+
+    Icon5_4 As icon.Cancel:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =52
+        Icon: =Icon.Cancel
+        OnSelect: |-
+            =Navigate('New Design_Dashboard');
+            UpdateContext({Label32_1: ""});
+            UpdateContext({Label32:""});
+            Clear(serialcol);
+            Reset(serialno_search_1);
+            Reset(Dropdown1_1);
+            Reset(Dropdown2_1);
+            Reset(Deposit_1);
+        X: =1277
+        Y: =11
+        ZIndex: =4
+
+    Label30_2 As label:
+        Text: |-
+            ="Customer name:"
+        X: =24
+        Y: =92
+        ZIndex: =5
+
+    Label32_2 As label:
+        Fill: =RGBA(237, 237, 237, 1)
+        Text: =cust_gallery.Selected.CustomerName
+        Width: =226
+        X: =186
+        Y: =92
+        ZIndex: =6
+
+    Label30_3 As label:
+        Text: |-
+            ="Sales order no:"
+        X: =24
+        Y: =143
+        ZIndex: =7
+
+    Label32_3 As label:
+        Fill: =RGBA(237, 237, 237, 1)
+        Text: =createsoheader.SalesId
+        Visible: =ShowInputBox
+        Width: =226
+        X: =186
+        Y: =143
+        ZIndex: =8
+
+    cust_id_1 As label:
+        Fill: =RGBA(237, 237, 237, 1)
+        Text: =cust_gallery.Selected.CustomerId
+        Visible: =false
+        Width: =226
+        X: =436
+        Y: =92
+        ZIndex: =9
+
+    serialno_search_1 As text:
+        Clear: =true
+        Default: =""
+        HintText: ="Search by serial no"
+        Visible: =ShowInputBox
+        X: =37
+        Y: =231
+        ZIndex: =13
+
+    Icon12_1 As icon.Add:
+        Height: =40
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Collect(serialcol,
+            AddSalesline.addline(
+                    {
+                        _CreateSalesLine: {
+                            InventSerialId:serialno_search_1.Text,
+                            SalesId: Label37_2.Text
+                        }
+                    }
+            )
+            )
+        Visible: =ShowInputBox
+        Width: =40
+        X: =370
+        Y: =231
+        ZIndex: =16
+
+    Label33_1 As label:
+        Text: ="Order Details"
+        X: =610
+        Y: =199
+        ZIndex: =19
+
+    Label34_1 As label:
+        Text: ="Total"
+        X: =535
+        Y: =263
+        ZIndex: =20
+
+    Total_amt_1 As label:
+        Text: |-
+            =Text(Sum(transaction_1.AllItems,Price),"[$-en-us]$#,###")
+        X: =653
+        Y: =260
+        ZIndex: =21
+
+    Label34_9 As label:
+        Height: =44
+        Text: ="Currency"
+        Width: =91
+        X: =535
+        Y: =303
+        ZIndex: =23
+
+    Label34_10 As label:
+        Height: =52
+        Text: ="Payment Method"
+        Width: =109
+        X: =535
+        Y: =347
+        ZIndex: =24
+
+    Label34_11 As label:
+        Height: =52
+        Text: ="Tax"
+        Width: =109
+        X: =535
+        Y: =397
+        ZIndex: =25
+
+    Label34_12 As label:
+        Height: =43
+        Text: ="Total-After Tax"
+        Width: =109
+        X: =535
+        Y: =449
+        ZIndex: =26
+
+    Label34_13 As label:
+        Height: =43
+        Text: ="Amount"
+        Width: =109
+        X: =535
+        Y: =506
+        ZIndex: =27
+
+    Label34_14 As label:
+        Height: =43
+        Text: ="Balance Amount"
+        Width: =109
+        X: =535
+        Y: =549
+        ZIndex: =28
+
+    pay_btn_1 As button:
+        Fill: =RGBA(0, 0, 0, 1)
+        OnSelect: |-
+            =CreatePaymentHW.CreatePayment(
+                {
+                    _paymentScreen: {
+                        SalesId: Label37_2.Text,
+                        TransDate: DatePicker1_1.SelectedDate,
+                        Amount: Value(Label38_1.Text),
+                        CurrencyCodeBase: Dropdown1_1.Selected.Value,
+                        PaymentMethod: Dropdown2_1.Selected.Value
+                    }
+                }
+            );
+            Notify("Balance amount has been paid")
+        Text: ="Pay"
+        Width: =150
+        X: =549
+        Y: =705
+        ZIndex: =29
+
+    Label37_3 As label:
+        Text: =""
+        Visible: =//Sum(transaction.AllItems,Price)
+        X: =658
+        Y: =303
+        ZIndex: =30
+
+    Label34_15 As label:
+        Height: =43
+        Text: ="Transaction Date"
+        Width: =109
+        X: =535
+        Y: =605
+        ZIndex: =31
+
+    DatePicker1_1 As datepicker:
+        Height: =43
+        Width: =172
+        X: =658
+        Y: =605
+        ZIndex: =32
+
+    Dropdown1_1 As dropdown:
+        Default: ="Select here"
+        Height: =38
+        Items: =["Select here","USD","EUR","AUD","JPY","AED","CNY"]
+        Width: =172
+        X: =658
+        Y: =305
+        ZIndex: =33
+
+    Dropdown2_1 As dropdown:
+        Height: =41
+        Items: =["Select here","Wire Transfer","Debit Card","Credit Card","Cash","Credit Balance"]
+        Width: =172
+        X: =658
+        Y: =356
+        ZIndex: =34
+
+    Deposit_1 As text:
+        Default: =""
+        Height: =42
+        Width: =172
+        X: =658
+        Y: =507
+        ZIndex: =35
+
+    Label38_1 As label:
+        Height: =35
+        Text: |-
+            =Text(Value(Total_amt_1.Text)-Value(Deposit_1.Text),"[$-en-us]$#,###")
+        Width: =172
+        X: =658
+        Y: =557
+        ZIndex: =36
+
+    Label37_2 As label:
+        Text: =createsoheader.SalesId
+        Visible: =false
+        X: =784
+        Y: =159
+        ZIndex: =37
+
+    Image1_9 As image:
+        Height: =75
+        Image: =image
+        Width: =173
+        ZIndex: =38
+
