@@ -96,7 +96,7 @@
 
             "'pay no' As button":
                 OnSelect: |-
-                    =UpdateContext({showpopup:false})
+                    =UpdateContext({showpopup:false});
                 Text: ="No"
                 X: =201
                 Y: =378
@@ -104,7 +104,19 @@
 
             "'pay yes' As button":
                 OnSelect: |-
-                    =UpdateContext({showpopup:false})
+                    =CreatePaymentHW.CreatePayment(
+                        {
+                            _paymentScreen: {
+                                SalesId: Label37_2.Text,
+                                TransDate: DatePicker1_1.SelectedDate,
+                                Amount: Value(Label38_1.Text),
+                                CurrencyCodeBase: Dropdown1_1.Selected.Value,
+                                PaymentMethod: Dropdown2_1.Selected.Value
+                            }
+                        }
+                    );
+                    Notify("Balance amount has been paid");
+                    UpdateContext({showpopup:false})
                 Text: ="Yes"
                 X: =786
                 Y: =378
