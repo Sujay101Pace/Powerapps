@@ -90,8 +90,8 @@
             Fill: =RGBA(215, 223, 240, 1)
             Height: =350
             Width: =1140
-            X: =174
-            Y: =201
+            X: =150
+            Y: =204
             ZIndex: =1
 
             "'pay no' As button":
