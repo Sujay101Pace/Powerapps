@@ -385,7 +385,7 @@
             //Notify("Deposit amount has been paid")
         Text: ="Pay"
         Width: =150
-        X: =996
+        X: =968
         Y: =725
         ZIndex: =29
 
@@ -457,4 +457,18 @@
         Image: =image
         Width: =173
         ZIndex: =38
+
+    Payment_history_btn_3 As button:
+        Fill: =RGBA(0, 0, 0, 1)
+        OnSelect: |-
+            =ClearCollect(
+                pythstr,
+                PaymentHistoryHW.PaymentHistory({_paymentHistory: {SalesId: Label37.Text}}).PaymentList
+            );
+            Navigate('New Design_Payment History')
+        Text: ="Get Payment History"
+        Width: =213
+        X: =1132
+        Y: =725
+        ZIndex: =39
 
