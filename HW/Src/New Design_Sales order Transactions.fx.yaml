@@ -370,7 +370,7 @@
     pay_btn As button:
         Fill: =RGBA(0, 0, 0, 1)
         OnSelect: |-
-            =CreatePaymentHW.CreatePayment(
+            =/*CreatePaymentHW.CreatePayment(
                 {
                     _paymentScreen: {
                         SalesId: Label37.Text,
@@ -380,9 +380,9 @@
                         PaymentMethod: Dropdown2.Selected.Value
                     }
                 }
-            );
-            //Navigate('New Design_Payment');
-            Notify("Deposit amount has been paid")
+            );*/
+            Navigate('New Design_Payment');
+            //Notify("Deposit amount has been paid")
         Text: ="Pay"
         Width: =150
         X: =996
