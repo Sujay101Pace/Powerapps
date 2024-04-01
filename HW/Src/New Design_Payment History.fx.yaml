@@ -177,7 +177,8 @@
             =ClearCollect(
                 pythstr,
                 PaymentHistoryHW.PaymentHistory({_paymentHistory: {SalesId: Label37.Text}}).PaymentList
-            )
+            );
+            Navigate('New Design_Payment History');
         Text: ="Get Payment History"
         Width: =226
         X: =21
