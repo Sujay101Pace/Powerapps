@@ -316,7 +316,7 @@
         Text: |-
             =Text(Sum(transaction.AllItems,Price),"[$-en-us]$#,###")
         X: =1100
-        Y: =280
+        Y: =281
         ZIndex: =21
 
     Label34_2 As label:
